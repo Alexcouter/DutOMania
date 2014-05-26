@@ -1,4 +1,5 @@
-package jeu;
+package jeuGraphic;
+
 
 public class LancerJeu {
 
