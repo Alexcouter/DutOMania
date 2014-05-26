@@ -11,18 +11,41 @@ import javax.swing.JPanel;
 import javax.swing.JRootPane;
 
 
-public class FenetreMain extends FenetreBase implements ActionListener {
+public class panelMain extends FenetreBase implements ActionListener {
 	  private JPanel panelMain = null;
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
 	  private JButton bouton4J = null;
-	  private JLabel information = null;
+	  private JLabel base = null;
 	  
 	  
-	 public FenetreMain(){
+	 public panelMain(){
 			super("Écran d'accueil",800,600);
+		    setContentPane(getPanelPrincipal());
 			validate();
 	 }
+	 
+	 private JPanel getPanelPrincipal()
+	  {
+	    if (this.panelMain == null)
+	    {
+	    	//Logo a ajouter
+	    	
+	      this.base = new JLabel();
+	      this.base.setBounds(30, 125, 331, 46);
+	      this.base.setHorizontalTextPosition(0);
+	      this.base.setHorizontalAlignment(0);
+	      this.base.setText("Choisissez le mode de jeu");
+	      this.panelMain = new JPanel();
+	      this.panelMain.setLayout(null);
+//	      this.panelMain.add(logo);
+	      this.panelMain.add(getBoutonNormal());
+	      this.panelMain.add(getBoutonSurvie());
+	      this.panelMain.add(this.base);
+
+	    }
+	    return this.panelMain;
+	  }
 	  
 	 private JButton getBoutonNormal()
 	  {
