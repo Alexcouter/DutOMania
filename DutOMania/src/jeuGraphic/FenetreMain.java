@@ -1,4 +1,4 @@
-package jeu;
+package jeuGraphic;
 
 public class FenetreMain {
 
