@@ -24,11 +24,44 @@ public class FenetreMain extends FenetreBase implements ActionListener {
 			validate();
 	 }
 	  
+	 private JButton getBoutonNormal()
+	  {
+	    if (this.boutonNormal == null)
+	    {
+	      this.boutonNormal = new JButton();
+	      this.boutonNormal.setPreferredSize(new Dimension(87, 26));
+	      this.boutonNormal.setSize(new Dimension(331, 61));
+	      this.boutonNormal.setText("Normal");
+	      this.boutonNormal.setLocation(new Point(30, 170));
+	      this.boutonNormal.addActionListener(this);
+	      getRootPane().setDefaultButton(this.boutonNormal);
+	    }
+	    return this.boutonNormal;
+	  }
+	  
+	  private JButton getBoutonSurvie()
+	  {
+	    if (this.boutonSurvie == null)
+	    {
+	      this.boutonSurvie = new JButton();
+	      this.boutonSurvie.setBounds(30, 250, 331, 61);
+	      this.boutonSurvie.setText("Survie");
+	      this.boutonSurvie.addActionListener(this);
+	    }
+	    return this.boutonSurvie;
+	  }
+	 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		  int bouton = 0;
+		    if (arg0.getSource() == this.boutonNormal) {
+		      bouton = 1;
+		    } else if (arg0.getSource() == this.boutonSurvie) {
+		      bouton = 2;
+		    }
+		    new FenetreJeu(bouton);
+		    dispose();
 	}	
 
 }
