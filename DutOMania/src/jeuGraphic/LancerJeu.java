@@ -1,9 +1,10 @@
 package jeuGraphic;
 
-public class FenetreMain {
+
+public class LancerJeu {
 
 	public static void main(String[] args) {
-		
-	}	
+		new panelMain();
+	}
 
 }
