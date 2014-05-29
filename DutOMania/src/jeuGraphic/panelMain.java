@@ -1,26 +1,18 @@
 package jeuGraphic;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRootPane;
-import javax.swing.border.Border;
 
 
 public class panelMain extends FenetreBase implements ActionListener {
 	  private JPanel panelMain = null;
-	  private JPanel panelBouton;
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
 	  private JButton bouton4J = null;
@@ -28,7 +20,7 @@ public class panelMain extends FenetreBase implements ActionListener {
 	  
 	  
 	 public panelMain(){
-			super("Écran d'accueil",800,600);
+			super("Ã‰cran d'accueil");
 		    setContentPane(getPanelPrincipal());
 			validate();
 	 }
@@ -43,26 +35,14 @@ public class panelMain extends FenetreBase implements ActionListener {
 	      this.base.setBounds(30, 125, 331, 46);
 	      this.base.setHorizontalTextPosition(0);
 	      this.base.setHorizontalAlignment(0);
-	      this.base.setText("Choisissez le mode de jeu");
-	      Container fenetreJeu = getContentPane();
-	      fenetreJeu.setLayout(new FlowLayout());
-	      
-	      //Essai pour le positionnement des bouton pasge de choix du mode
-	      Box boxTexte = Box.createVerticalBox();
-	      boxTexte.add(Box.createHorizontalStrut(5));
-	      
-	      
-	      
-//	      this.panelMain = new JPanel();
-//	      this.panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.Y_AXIS));   //new GridLayout(3, 1)
-//	      panelMain.add(Box.createVerticalStrut(2));
+	      this.base.setText("Choisissez le mode de jeu :");
+	      this.base.setLocation(new Point(240,250));
+	      this.panelMain = new JPanel();
+	      this.panelMain.setLayout(null);
 //	      this.panelMain.add(logo);
-//	      this.panelMain.add(this.base);
-//	      this.panelMain.add(getBoutonNormal());
-//	      this.panelMain.add(getBoutonSurvie());
-//	      fenetreJeu.add(panelMain);
-	   
-	      
+	      this.panelMain.add(getBoutonNormal());
+	      this.panelMain.add(getBoutonSurvie());
+	      this.panelMain.add(this.base);
 
 	    }
 	    return this.panelMain;
@@ -73,10 +53,9 @@ public class panelMain extends FenetreBase implements ActionListener {
 	    if (this.boutonNormal == null)
 	    {
 	      this.boutonNormal = new JButton();
-	      this.boutonNormal.setPreferredSize(new Dimension(87, 26));
-	      this.boutonNormal.setSize(new Dimension(331, 61));
+	      this.boutonNormal.setSize(new Dimension(320, 60));
 	      this.boutonNormal.setText("Normal");
-	      this.boutonNormal.setLocation(new Point(30, 170));
+	      this.boutonNormal.setLocation(new Point(240,300));
 	      this.boutonNormal.addActionListener(this);
 	      getRootPane().setDefaultButton(this.boutonNormal);
 	    }
@@ -88,7 +67,8 @@ public class panelMain extends FenetreBase implements ActionListener {
 	    if (this.boutonSurvie == null)
 	    {
 	      this.boutonSurvie = new JButton();
-	      this.boutonSurvie.setBounds(30, 250, 331, 61);
+	      this.boutonSurvie.setSize(new Dimension(320, 60));
+	      this.boutonSurvie.setLocation(new Point(240,400));
 	      this.boutonSurvie.setText("Survie");
 	      this.boutonSurvie.addActionListener(this);
 	    }
