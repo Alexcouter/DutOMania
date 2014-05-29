@@ -16,7 +16,6 @@ public class panelMain extends FenetreBase implements ActionListener {
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
 	  private JButton boutonQuitter = null;
-	  private JButton bouton4J = null;
 	  private JLabel base = null;
 	  
 	  
