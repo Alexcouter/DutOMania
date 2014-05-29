@@ -20,7 +20,7 @@ public class panelMain extends FenetreBase implements ActionListener {
 	  
 	  
 	 public panelMain(){
-			super("Écran d'accueil");
+			super("Ecran d'accueil");
 		    setContentPane(getPanelPrincipal());
 			validate();
 	 }
