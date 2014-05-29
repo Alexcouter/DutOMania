@@ -15,6 +15,7 @@ public class panelMain extends FenetreBase implements ActionListener {
 	  private JPanel panelMain = null;
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
+	  private JButton boutonQuitter = null;
 	  private JButton bouton4J = null;
 	  private JLabel base = null;
 	  
@@ -42,6 +43,7 @@ public class panelMain extends FenetreBase implements ActionListener {
 //	      this.panelMain.add(logo);
 	      this.panelMain.add(getBoutonNormal());
 	      this.panelMain.add(getBoutonSurvie());
+	      this.panelMain.add(getBoutonQuitter());
 	      this.panelMain.add(this.base);
 
 	    }
@@ -73,6 +75,19 @@ public class panelMain extends FenetreBase implements ActionListener {
 	      this.boutonSurvie.addActionListener(this);
 	    }
 	    return this.boutonSurvie;
+	  }
+	  
+	  private JButton getBoutonQuitter()
+	  {
+	    if (this.boutonQuitter == null)
+	    {
+	      this.boutonQuitter = new JButton();
+	      this.boutonQuitter.setSize(new Dimension(320, 60));
+	      this.boutonQuitter.setLocation(new Point(240,500));
+	      this.boutonQuitter.setText("Quitter le jeu");
+	      this.boutonQuitter.addActionListener(this);
+	    }
+	    return this.boutonQuitter;
 	  }
 	 
 
