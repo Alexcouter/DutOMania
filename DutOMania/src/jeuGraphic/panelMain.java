@@ -1,18 +1,26 @@
 package jeuGraphic;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRootPane;
+import javax.swing.border.Border;
 
 
 public class panelMain extends FenetreBase implements ActionListener {
 	  private JPanel panelMain = null;
+	  private JPanel panelBouton;
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
 	  private JButton bouton4J = null;
@@ -36,12 +44,25 @@ public class panelMain extends FenetreBase implements ActionListener {
 	      this.base.setHorizontalTextPosition(0);
 	      this.base.setHorizontalAlignment(0);
 	      this.base.setText("Choisissez le mode de jeu");
-	      this.panelMain = new JPanel();
-	      this.panelMain.setLayout(null);
+	      Container fenetreJeu = getContentPane();
+	      fenetreJeu.setLayout(new FlowLayout());
+	      
+	      //Essai pour le positionnement des bouton pasge de choix du mode
+	      Box boxTexte = Box.createVerticalBox();
+	      boxTexte.add(Box.createHorizontalStrut(5));
+	      
+	      
+	      
+//	      this.panelMain = new JPanel();
+//	      this.panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.Y_AXIS));   //new GridLayout(3, 1)
+//	      panelMain.add(Box.createVerticalStrut(2));
 //	      this.panelMain.add(logo);
-	      this.panelMain.add(getBoutonNormal());
-	      this.panelMain.add(getBoutonSurvie());
-	      this.panelMain.add(this.base);
+//	      this.panelMain.add(this.base);
+//	      this.panelMain.add(getBoutonNormal());
+//	      this.panelMain.add(getBoutonSurvie());
+//	      fenetreJeu.add(panelMain);
+	   
+	      
 
 	    }
 	    return this.panelMain;
