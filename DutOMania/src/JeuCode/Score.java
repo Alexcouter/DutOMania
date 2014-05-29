@@ -1,5 +1,6 @@
 package JeuCode;
 
-public class Score {
+public abstract class Score {
+	private int score;
 
 }

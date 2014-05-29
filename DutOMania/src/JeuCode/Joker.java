@@ -16,7 +16,7 @@ public class Joker {
 		
 	}
 	
-	public void joker42(){
+	public void joker42(Score sc){
 		
 	}
 	

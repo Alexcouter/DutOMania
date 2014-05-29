@@ -1,5 +1,7 @@
 package JeuCode;
 
-public class ScoreSurvie {
+public class ScoreSurvie extends Score{
+	
+	private int nbVies;
 
 }

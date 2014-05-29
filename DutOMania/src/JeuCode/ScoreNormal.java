@@ -1,5 +1,6 @@
 package JeuCode;
 
-public class ScoreNormal {
+public class ScoreNormal extends Score {
+	private int totalScore;
 
 }
