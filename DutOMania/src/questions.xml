@@ -1,0 +1,149 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+
+
+<racine>
+	<question id="1">
+		<intitule>Que signifie HTML ?</intitule>
+		<proposition>L'Hypertext Markup Language</proposition>
+		<proposition>L'Hypertext Market Language</proposition>
+		<proposition>HyperTipe Maker Ligne</proposition>
+		<proposition>L'HyperText Man Lan</proposition>
+		<reponse>1</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+	
+	<question id="2">
+		<intitule>Que signifie UML ?</intitule>
+		<proposition>United Multimédia Language</proposition>
+		<proposition>Ultra Man Laser</proposition>
+		<proposition>Unified Modeling Language</proposition>
+		<proposition>Unit Modern Limit</proposition>
+		<reponse>3</reponse>
+		<theme>Outils et modèles du génie logiciel</theme>
+	</question>
+	
+	
+	<question id="3">
+		<intitule>D'ou viens le nom Eclipse ?</intitule>
+		<proposition>Nom du Koala, mascotte de l'équipe de Test</proposition>
+		<proposition>Suite à un aveuglement de l'équipe par une éclipse </proposition>
+		<proposition>Troll de dévellopeur concurrent</proposition>
+		<proposition>Aucun idée, ces noms sortent de nul-part</proposition>
+		<reponse>3</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+	
+	<question id="4">
+		<intitule>Quel entreprise a developpe le language Java ?</intitule>
+		<proposition>Cisco</proposition>
+		<proposition>Apple</proposition>
+		<proposition>Microsoft</proposition>
+		<proposition>Sun Microsystem</proposition>
+		<reponse>4</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+	<question id="5">
+		<intitule>A quoi sert un pointeur en C ?</intitule>
+		<proposition>Vaseline forever</proposition>
+		<proposition>L'Hypertext Market Language</proposition>
+		<proposition>Contenir l'adresse d'une autre variable d'un type donné.</proposition>
+		<proposition>Sert à contenir une pointe</proposition>
+		<reponse>3</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+	<question id="6">
+		<intitule>Parmis ces diagrammes lequel est un diagramme UML</intitule>
+		<proposition>Diagramme de Gantt</proposition>
+		<proposition>Diagramme de PERT</proposition>
+		<proposition>Diagramme de séquence</proposition>
+		<proposition>Diagramme de bode</proposition>
+		<reponse>3</reponse>
+		<theme>Outils et modèles du génie logiciel</theme>
+	</question>
+	
+	<question id="7">
+		<intitule>Combien de dos d'âne passe t-on pour rentrer dans le parking ?</intitule>
+		<proposition>Deux</proposition>
+		<proposition>trop</proposition>
+		<proposition>violent</proposition>
+		<proposition>Un</proposition>
+		<reponse>1</reponse>
+		<theme>Vie étudiante</theme>
+	</question>
+	
+	<question id="8">
+		<intitule>Quel âge a le bâtiment informatique ?</intitule>
+		<proposition>2</proposition>
+		<proposition>3</proposition>
+		<proposition>1</proposition>
+		<proposition>5</proposition>
+		<reponse>1</reponse>
+		<theme>Vie étudiante</theme>
+	</question>
+	
+	<question id="9">
+		<intitule>Que signifie IPV4 ?</intitule>
+		<proposition>Internet Protocol Version 4</proposition>
+		<proposition>International Parameter Version 4</proposition>
+		<proposition>Internet Protocol Vision 4</proposition>
+		<proposition>Internet Portail Version 4</proposition>
+		<reponse>3</reponse>
+		<theme>Architecture des systèmes et réseaux</theme>
+	</question>
+	
+	<question id="10">
+		<intitule>Quelle est la deuxième couche du modèle OSI ?</intitule>
+		<proposition>Présentation</proposition>
+		<proposition>Session</proposition>
+		<proposition>Transport</proposition>
+		<proposition>Liaison</proposition>
+		<reponse>4</reponse>
+		<theme>Architecture des systèmes et réseaux</theme>
+	</question>
+	
+	<question id="11">
+		<intitule>Quelle est la deuxième couche du modèle OSI ?</intitule>
+		<proposition>18 Octets</proposition>
+		<proposition>128bits</proposition>
+		<proposition>32 Bits</proposition>
+		<proposition>6 Octets</proposition>
+		<reponse>2</reponse>
+		<theme>Architecture des systèmes et réseaux</theme>
+	</question>
+	
+	<question id="12">
+		<intitule>
+Que permet de faire la commande Grant en Base de donnée ?</intitule>
+		<proposition>Supprime les accès à la base de données</proposition>
+		<proposition>Autorise un accès partiel à la base</proposition>
+		<proposition>Autorise un accès totale à la base</proposition>
+		<proposition>Autorise un accès totale ou partiel à la base</proposition>
+		<reponse>4</reponse>
+		<theme>Outils et modèles du génie logiciel</theme>
+	</question>
+	
+	<question id="13">
+		<intitule>Que signifie HTML ?</intitule>
+		<proposition>L'Hypertext Markup Language</proposition>
+		<proposition>L'Hypertext Market Language</proposition>
+		<proposition>HyperTipe Maker Ligne</proposition>
+		<proposition>L'HyperText Man Lan</proposition>
+		<reponse>1</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+	<question id="14">
+		<intitule>Que signifie HTML ?</intitule>
+		<proposition>L'Hypertext Markup Language</proposition>
+		<proposition>L'Hypertext Market Language</proposition>
+		<proposition>HyperTipe Maker Ligne</proposition>
+		<proposition>L'HyperText Man Lan</proposition>
+		<reponse>1</reponse>
+		<theme>Algorithmique et programmation</theme>
+	</question>
+	
+</racine>
