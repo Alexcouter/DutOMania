@@ -3,20 +3,16 @@ package JeuCode;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
+import org.xml.sax.SAXException;
 import java.io.File;
-
+import java.io.IOException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-
-import java.io.IOException;
 import java.util.Random;
 
-import org.xml.sax.SAXException;
-
 public class Jeu {
-	
+
 	// Méthode retournant une question indentifiée par son id
 	public static Question recupererQuestion(int id) {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
@@ -33,7 +29,8 @@ public class Jeu {
 			// naviguer dedans
 			Element racine = document.getDocumentElement();
 
-			// Récupération de la liste des noeuds fils de questions (depuis l'élément
+			// Récupération de la liste des noeuds fils de questions (depuis
+			// l'élément
 			// racine);
 			NodeList questionNoeuds = racine.getElementsByTagName("question");
 
@@ -87,12 +84,13 @@ public class Jeu {
 		return res;
 
 	}
-	
-	// Méthode retournant une question aléatoire
-	public static Question recupererQuestionAleatoire(){
+
+	// Méthode générant un entier aléatoire inférieur ou égal au nombre de
+	// questions dans le XML
+	public static int numeroQuestionAleatoire() {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
-		Question res = null;
+		int nbr = 0;
 		try {
 			// Création d'un parseur
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -104,15 +102,15 @@ public class Jeu {
 			// naviguer dedans
 			Element racine = document.getDocumentElement();
 
-			// Récupération de la liste des noeuds fils de questions (depuis l'élément
+			// Récupération de la liste des noeuds fils de questions (depuis
+			// l'élément
 			// racine);
 			NodeList questionNoeuds = racine.getElementsByTagName("question");
-			
-			//Génération d'un nombre aléatoire compris entre 1 et le nombre de noeuds fils dans le XML			
+
+			// Génération d'un nombre entier aléatoire compris entre 1 et le
+			// nombre de noeuds fils dans le XML
 			Random r = new Random();
-			int rand = 1 + r.nextInt(questionNoeuds.getLength() - 1);
-			res = recupererQuestion(rand);
-			
+			nbr = 1 + r.nextInt(questionNoeuds.getLength() - 1);
 
 		} catch (final ParserConfigurationException e) {
 			e.printStackTrace();
@@ -121,9 +119,31 @@ public class Jeu {
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
-		
-		return res;
 
+		return nbr;
 	}
-	
+
+	// Méthode retournant une question aléatoire
+	public static Question recupererQuestionAleatoire() {
+		return recupererQuestion(numeroQuestionAleatoire());
+	}
+
+	// Méthode retournant une question aléatoire d'un thème précis
+	public static Question recupererQuestionAleatoire(String theme) {
+		Question res;
+
+		do {
+			// On récupère un question aléatoire
+			res = recupererQuestionAleatoire();
+
+			// Et on répète tant que le thème n'est pas celui passé en paramètre
+		} while (res.getTheme() != theme);
+
+		return res;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(recupererQuestionAleatoire());
+	}
+
 }
