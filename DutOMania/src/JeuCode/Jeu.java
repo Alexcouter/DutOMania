@@ -130,20 +130,20 @@ public class Jeu {
 
 	// Méthode retournant une question aléatoire d'un thème précis
 	public static Question recupererQuestionAleatoire(String theme) {
+		// Initialisation de la variable contenant le résultat
 		Question res;
 
+		// On boucle tant que le thème de la question ne correspond pas au thème
+		// passé en paramètre
 		do {
-			// On récupère un question aléatoire
 			res = recupererQuestionAleatoire();
-
-			// Et on répète tant que le thème n'est pas celui passé en paramètre
-		} while (res.getTheme() != theme);
+		} while (!res.getTheme().equals(theme));
 
 		return res;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(recupererQuestionAleatoire());
+		System.out.println(recupererQuestionAleatoire("Vie étudiante"));
 	}
 
 }
