@@ -3,16 +3,22 @@ package JeuCode;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import java.io.File;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
 import java.io.IOException;
+import java.util.Random;
+
 import org.xml.sax.SAXException;
 
 public class Jeu {
-
-	private static Question recupererQuestion(int id) {
+	
+	// Méthode retournant une question indentifiée par son id
+	public static Question recupererQuestion(int id) {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		Question res = null;
@@ -27,12 +33,13 @@ public class Jeu {
 			// naviguer dedans
 			Element racine = document.getDocumentElement();
 
-			// Récupération de la liste des noeuds fils (depuis l'élément
-			// racine)
-			NodeList racineNoeuds = racine.getChildNodes();
+			// Récupération de la liste des noeuds fils de questions (depuis l'élément
+			// racine);
+			NodeList questionNoeuds = racine.getElementsByTagName("question");
 
 			// Recupération de la question située au noeud passé en paramètre
-			Element question = (Element) racineNoeuds.item(id);
+
+			Element question = (Element) questionNoeuds.item(id);
 
 			// Récupération de l'intitule de la question
 			Element intitule = (Element) question.getElementsByTagName(
@@ -53,9 +60,9 @@ public class Jeu {
 			}
 
 			// Récuperation de l'id de la réponse
-			Element reponse = (Element) question.getElementsByTagName(
-					"reponse").item(0);
-					
+			Element reponse = (Element) question
+					.getElementsByTagName("reponse").item(0);
+
 			int reponseInt = Integer.parseInt(reponse.getTextContent());
 
 			// Récupération du thème de la question
@@ -66,7 +73,8 @@ public class Jeu {
 
 			// Création d'un objet Question avec les attributs de la question
 			// d'id choisi
-			res = new Question(id, intituleStr, propositionsTab, reponseInt, themeStr);
+			res = new Question(id, intituleStr, propositionsTab, reponseInt,
+					themeStr);
 
 		} catch (final ParserConfigurationException e) {
 			e.printStackTrace();
@@ -79,5 +87,43 @@ public class Jeu {
 		return res;
 
 	}
+	
+	// Méthode retournant une question aléatoire
+	public static Question recupererQuestionAleatoire(){
+		final DocumentBuilderFactory factory = DocumentBuilderFactory
+				.newInstance();
+		Question res = null;
+		try {
+			// Création d'un parseur
+			DocumentBuilder builder = factory.newDocumentBuilder();
 
+			// Création d'un objet de type Document contenant le fichier XML
+			Document document = builder.parse(new File("src/questions.xml"));
+
+			// Récupération de l'élément racine du document pour pouvoir
+			// naviguer dedans
+			Element racine = document.getDocumentElement();
+
+			// Récupération de la liste des noeuds fils de questions (depuis l'élément
+			// racine);
+			NodeList questionNoeuds = racine.getElementsByTagName("question");
+			
+			//Génération d'un nombre aléatoire compris entre 1 et le nombre de noeuds fils dans le XML			
+			Random r = new Random();
+			int rand = 1 + r.nextInt(questionNoeuds.getLength() - 1);
+			res = recupererQuestion(rand);
+			
+
+		} catch (final ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (final SAXException e) {
+			e.printStackTrace();
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
+		
+		return res;
+
+	}
+	
 }

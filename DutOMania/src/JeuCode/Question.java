@@ -9,8 +9,6 @@ public class Question {
 	private int reponse;
 	private String theme;
 	
-
-	
 	public Question(int idQuestion, String intituleQuestion,
 			String[] propositions, int reponse, String theme) {
 		super();
@@ -21,8 +19,33 @@ public class Question {
 		this.theme = theme;
 	}
 
-	public void checkReponse(){
-		
+	public boolean checkReponse(int reponse){
+		if(reponse == this.getReponse()){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public int getIdQuestion() {
+		return idQuestion;
+	}
+
+	public String getIntituleQuestion() {
+		return intituleQuestion;
+	}
+
+	public String[] getPropositions() {
+		return propositions;
+	}
+
+	public int getReponse() {
+		return reponse;
+	}
+
+	public String getTheme() {
+		return theme;
 	}
 
 	@Override
