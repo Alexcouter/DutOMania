@@ -32,7 +32,7 @@ public class panelMain extends FenetreBase implements ActionListener {
 	    	//Logo a ajouter
 	    	
 	      this.base = new JLabel();
-	      this.base.setBounds(30, 125, 331, 46);
+	      this.base.setBounds(30, 125, 330, 40);
 	      this.base.setHorizontalTextPosition(0);
 	      this.base.setHorizontalAlignment(0);
 	      this.base.setText("Choisissez le mode de jeu :");
