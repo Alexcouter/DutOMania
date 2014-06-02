@@ -42,8 +42,7 @@ public class FenetreJeuSurvieChoix extends FenetreBase implements ActionListener
 			
 			this.survieChoixTxt.setBounds(30, 125, 330, 40);
 			
-			// Peut-être inutile au final
-			this.survieChoixTxt.setHorizontalTextPosition(0);
+			//Texte centre
 			this.survieChoixTxt.setHorizontalAlignment(0);
 			this.survieChoixTxt.setText("Mode Survie :");
 			//Position du texte
