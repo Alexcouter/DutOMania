@@ -21,6 +21,8 @@ public class FenetreJeuSurvieChoix extends FenetreBase implements ActionListener
 	private JButton boutonRetour = null;
 
 	public FenetreJeuSurvieChoix(){
+		
+		//Creation de la fenetre de base pour la sélection de la difficulté du mode survie
 
 		super("Survie - Selection de la difficulte");
 		setContentPane(getPanelChoixSurvie());
@@ -30,14 +32,26 @@ public class FenetreJeuSurvieChoix extends FenetreBase implements ActionListener
 	private JPanel getPanelChoixSurvie() {
 		if (this.panelChoix == null)
 		{  	
+			//creation du panel
+			
+			
+			//texte au dessus des boutons
 			this.survieChoixTxt = new JLabel();
+			
+			//setBounds(x,y,width,height)
+			
 			this.survieChoixTxt.setBounds(30, 125, 330, 40);
+			
+			// Peut-être inutile au final
 			this.survieChoixTxt.setHorizontalTextPosition(0);
 			this.survieChoixTxt.setHorizontalAlignment(0);
 			this.survieChoixTxt.setText("Mode Survie :");
+			//Position du texte
 			this.survieChoixTxt.setLocation(new Point(240,100));
 			this.panelChoix = new JPanel();
 			this.panelChoix.setLayout(null);
+			
+			//Ajout des boutons via des methodes de création 
 			this.panelChoix.add(getBoutonFacile());
 			this.panelChoix.add(getBoutonNormal());
 			this.panelChoix.add(getBoutonDifficile());
@@ -120,9 +134,14 @@ public class FenetreJeuSurvieChoix extends FenetreBase implements ActionListener
 				else if(arg0.getSource() == this.boutonRetour){
 					bouton = 4;
 				}
+				
+				//Choix entre les différents boutons à l'éxécution d'un clic sur un bouton
 			if(bouton == 1 || bouton == 2 || bouton == 3){
+				//Donne un nombre de vie pour le mode survie suivant la difficulté
 		new FenetreJeuSurvie(bouton);
 			}
+			
+			//Retour au menu principal
 			if(bouton == 4){
 				new panelMain();
 			}
