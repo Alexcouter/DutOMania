@@ -67,7 +67,7 @@ public class FenetreJeuSurvie extends FenetreBase implements ActionListener {
 		this.survieScore = new JLabel();
 		this.survieScore.setBounds(0, 0, 100, 40);
 		this.survieScore.setLocation(new Point(710,0));
-		this.survieScore.setText("Score : "/* + Score.recupererScore*/ );
+		this.survieScore.setText("Score : "/* + Score.recupererScore*/  );
 		return this.survieScore;
 	}
 
