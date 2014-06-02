@@ -3,12 +3,18 @@ package JeuCode;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.xml.sax.SAXException;
+
 import java.io.File;
 import java.io.IOException;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Jeu {
@@ -63,10 +69,7 @@ public class Jeu {
 			int reponseInt = Integer.parseInt(reponse.getTextContent());
 
 			// Récupération du thème de la question
-			Element theme = (Element) question.getElementsByTagName("theme")
-					.item(0);
-
-			String themeStr = theme.getTextContent();
+			String themeStr = question.getAttribute("theme");
 
 			// Création d'un objet Question avec les attributs de la question
 			// d'id choisi
@@ -85,12 +88,11 @@ public class Jeu {
 
 	}
 
-	// Méthode générant un entier aléatoire inférieur ou égal au nombre de
-	// questions dans le XML
-	public static int numeroQuestionAleatoire() {
+	// Méthode retournant une question aléatoire
+	public static Question recupererQuestionAleatoire() {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
-		int nbr = 0;
+		Question res = null;
 		try {
 			// Création d'un parseur
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -110,7 +112,8 @@ public class Jeu {
 			// Génération d'un nombre entier aléatoire compris entre 1 et le
 			// nombre de noeuds fils dans le XML
 			Random r = new Random();
-			nbr = 1 + r.nextInt(questionNoeuds.getLength() - 1);
+			int nbr = 1 + r.nextInt(questionNoeuds.getLength() - 1);
+			res = recupererQuestion(nbr);
 
 		} catch (final ParserConfigurationException e) {
 			e.printStackTrace();
@@ -120,24 +123,57 @@ public class Jeu {
 			e.printStackTrace();
 		}
 
-		return nbr;
-	}
-
-	// Méthode retournant une question aléatoire
-	public static Question recupererQuestionAleatoire() {
-		return recupererQuestion(numeroQuestionAleatoire());
+		return res;
 	}
 
 	// Méthode retournant une question aléatoire d'un thème précis
 	public static Question recupererQuestionAleatoire(String theme) {
 		// Initialisation de la variable contenant le résultat
-		Question res;
+		final DocumentBuilderFactory factory = DocumentBuilderFactory
+				.newInstance();
+		Question res = null;
 
-		// On boucle tant que le thème de la question ne correspond pas au thème
-		// passé en paramètre
-		do {
-			res = recupererQuestionAleatoire();
-		} while (!res.getTheme().equals(theme));
+		try {
+			// Création d'un parseur
+			DocumentBuilder builder = factory.newDocumentBuilder();
+
+			// Création d'un objet de type Document contenant le fichier XML
+			Document document = builder.parse(new File("src/questions.xml"));
+
+			// Récupération de l'élément racine du document pour pouvoir
+			// naviguer dedans
+			Element racine = document.getDocumentElement();
+
+			// Récupération de la liste des noeuds fils de questions (depuis
+			// l'élément
+			// racine);
+			NodeList questionNoeuds = racine.getElementsByTagName("question");
+
+			// On récupère tout les numéros de question correspondant au thème
+			// dans une liste
+			ArrayList<Integer> questionsTheme = new ArrayList<Integer>();
+
+			for (int i = 0; i < questionNoeuds.getLength(); i++) {
+				Element question = (Element) questionNoeuds.item(i);
+
+				if (question.getAttribute("theme").equals(theme)) {
+					questionsTheme.add(Integer.parseInt(question
+							.getAttribute("id")));
+				}
+			}
+
+			// On récupère un numéro de question aléatoire dans la liste
+			Random r = new Random();
+			int nbr = 1 + r.nextInt(questionsTheme.size() - 1);
+			res = recupererQuestion(questionsTheme.get(nbr));
+
+		} catch (final ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (final SAXException e) {
+			e.printStackTrace();
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
 
 		return res;
 	}
