@@ -12,47 +12,47 @@ public class Joker {
 	}
 
 
-//	public void jokerMoitMoit (Question q){
-//		String prop1 = null;
-//		String prop2 = null;
-//		int choix;
-//
-//		this.setDispo(false);
-//		do{
-//			choix = (int) Math.random()*4;
-//			
-//			switch(choix){
-//			case 0 : prop1 = q.getProposition1();
-//			break;
-//			case 1 : prop1 = q.getProposition2();
-//			break;
-//			case 2 : prop1 = q.getProposition3();
-//			break;
-//			case 3 : prop1 = q.getProposition4();
-//			break;
-//			}	
-//		}
-//		while(prop1 == q.getReponse());
-//		
-//		do{
-//			choix = (int) Math.random()*4;
-//			
-//			switch(choix){
-//			case 0 : prop2 = q.getProposition1();
-//			break;
-//			case 1 : prop2 = q.getProposition2();
-//			break;
-//			case 2 : prop2 = q.getProposition3();
-//			break;
-//			case 3 : prop2 = q.getProposition4();
-//			break;
-//			}	
-//		}
-//		while(prop2 == q.getReponse() || prop2 == prop1);
-//		
-//
-//
-//	}
+	public void jokerMoitMoit (Question q){
+		int prop1 = 0;
+		int prop2 = 0;
+		int choix;
+
+		this.setDispo(false);
+		do{
+			choix = (int) Math.random()*4;
+			
+			switch(choix){
+			case 0 : prop1 = 1;
+			break;
+			case 1 : prop1 = 2;
+			break;
+			case 2 : prop1 = 3;
+			break;
+			case 3 : prop1 = 4;
+			break;
+			}	
+		}
+		while(prop1 == q.getReponse());
+		
+		do{
+			choix = (int) Math.random()*4;
+			
+			switch(choix){
+			case 0 : prop2 = 1;
+			break;
+			case 1 : prop2 = 2;
+			break;
+			case 2 : prop2 = 3;
+			break;
+			case 3 : prop2 = 4;
+			break;
+			}	
+		}
+		while(prop2 == q.getReponse() || prop2 == prop1);
+		
+
+
+	}
 
 
 
