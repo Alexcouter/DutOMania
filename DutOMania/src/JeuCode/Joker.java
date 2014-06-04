@@ -50,6 +50,8 @@ public class Joker {
 		}
 		while(prop2 == q.getReponse() || prop2 == prop1);
 		
+		q.enleverProposition(prop1);
+		q.enleverProposition(prop2);
 
 
 	}
