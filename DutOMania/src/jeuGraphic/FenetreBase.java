@@ -6,11 +6,11 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+
 public class FenetreBase extends JFrame {
 	 public FenetreBase(String title) {
 	 	
 	 	//Permet la création d'une super classe fenêtre
-	 	
 //	    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/LogoAplacer.ici")));
 	    setVisible(true);
 	    
