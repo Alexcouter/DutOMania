@@ -1,6 +1,8 @@
 package jeuGraphic;
 
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +17,12 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 	private JLabel normalScore = null;
 	private JLabel questionNumero = null;
 	private JLabel progression = null;
+	private JLabel questionTexte = null;
 	private JButton boutonQuitter = null;
+	private JButton reponse1 = null;
+	private JButton reponse2 = null;
+	private JButton reponse3 = null;
+	private JButton reponse4 = null;
 
 	public FenetreJeuNormal() {
 		super("Mode normal");
@@ -25,7 +32,8 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 
 	private JPanel getPanelSurvie() {
 		if (this.panelNormal == null)
-		{  	
+		{
+			
 			//creation du panel
 
 
@@ -39,24 +47,57 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 			this.normalTexteTop.setText("- Mode Normal -");
 			//Position du texte
 			this.normalTexteTop.setLocation(new Point(10,0));
+			
+			this.questionTexte = new JLabel();
+			this.questionTexte.setBounds(0, 0, 330, 40);
+			this.questionTexte.setText("Question");
+			this.questionTexte.setLocation(new Point(230,320));
+			
+			
+			
+			// Creation du panel
 			this.panelNormal = new JPanel();
 			this.panelNormal.setLayout(null);
-
 			//Ajout des boutons via des methodes de cr√©ation 
 			this.panelNormal.add(this.normalTexteTop);
 			this.panelNormal.add(getBoutonQuitter());
+		getPanneauReponses();
 			this.panelNormal.add(getScore());
 			this.panelNormal.add(getQuestionNumero());
+			this.panelNormal.add(this.questionTexte);
 
 		}
 		return this.panelNormal;
+	}
+
+	private void getPanneauReponses() {
+		this.reponse1 = new JButton();
+		this.reponse1.setSize(new Dimension(350, 50));
+		this.reponse1.setText("R1");
+		this.reponse1.setLocation(new Point(35,400));
+		this.panelNormal.add(this.reponse1);
+		this.reponse2 = new JButton();
+		this.reponse2.setSize(new Dimension(350, 50));
+		this.reponse2.setText("R2");
+		this.reponse2.setLocation(new Point(400,400));
+		this.panelNormal.add(this.reponse2);
+		this.reponse3 = new JButton();
+		this.reponse3.setSize(new Dimension(350, 50));
+		this.reponse3.setText("R3");
+		this.reponse3.setLocation(new Point(35,470));
+		this.panelNormal.add(this.reponse3);
+		this.reponse4 = new JButton();
+		this.reponse4.setSize(new Dimension(350, 50));
+		this.reponse4.setText("R4");
+		this.reponse4.setLocation(new Point(400,470));
+		this.panelNormal.add(this.reponse4);
 	}
 
 	private JLabel getQuestionNumero() {
 		this.questionNumero = new JLabel();
 		this.questionNumero.setHorizontalAlignment(0);
 		this.questionNumero.setBounds(0, 0, 330, 40);
-		this.questionNumero.setLocation(new Point(240,300));
+		this.questionNumero.setLocation(new Point(230,300));
 		this.questionNumero.setText("Question n∞"/*+ numeroquestion*/ );
 		return this.questionNumero;
 	}
