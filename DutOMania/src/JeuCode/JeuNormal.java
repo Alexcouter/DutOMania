@@ -9,7 +9,7 @@ public class JeuNormal extends Jeu {
 	}
 	
 	public void augmenterScore(){
-		score.setScore(score.getScore()+1);
+		score.miseAJourScore();
 	}
 	
 }
