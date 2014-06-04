@@ -37,7 +37,7 @@ public class Question {
 	}
 
 	public String getProposition(int numProp) {
-		return this.propositions[numProp];
+		return this.propositions[numProp-1];
 	}
 
 	public int getReponse() {
