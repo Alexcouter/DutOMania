@@ -36,8 +36,8 @@ public class Question {
 		return intituleQuestion;
 	}
 
-	public String[] getPropositions() {
-		return propositions;
+	public String getProposition(int numProp) {
+		return this.propositions[numProp];
 	}
 
 	public int getReponse() {
