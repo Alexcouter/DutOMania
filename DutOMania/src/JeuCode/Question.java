@@ -8,6 +8,7 @@ public class Question {
 	private String[] propositions = new String[4];
 	private int reponse;
 	private String theme;
+	private boolean sortie;
 	
 	public Question(int idQuestion, String intituleQuestion,
 			String[] propositions, int reponse, String theme) {
@@ -17,6 +18,7 @@ public class Question {
 		this.propositions = propositions;
 		this.reponse = reponse;
 		this.theme = theme;
+		this.sortie = false;
 	}
 
 	public boolean checkReponse(int reponse){
@@ -50,6 +52,14 @@ public class Question {
 
 	public String getTheme() {
 		return theme;
+	}
+
+	public boolean isSortie() {
+		return sortie;
+	}
+
+	public void setSortie(boolean sortie) {
+		this.sortie = sortie;
 	}
 
 	@Override

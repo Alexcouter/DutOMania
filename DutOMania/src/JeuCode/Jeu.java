@@ -18,9 +18,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Jeu {
+	
+	public Jeu() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	// Méthode retournant une question indentifiée par son id
-	public static Question recupererQuestion(int id) {
+	public Question recupererQuestion(int id) {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		Question res = null;
@@ -89,7 +94,7 @@ public class Jeu {
 	}
 
 	// Méthode retournant une question aléatoire
-	public static Question recupererQuestionAleatoire() {
+	public Question recupererQuestionAleatoire() {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		Question res = null;
@@ -127,7 +132,7 @@ public class Jeu {
 	}
 
 	// Méthode retournant une question aléatoire d'un thème précis
-	public static Question recupererQuestionAleatoire(String theme) {
+	public Question recupererQuestionAleatoire(String theme) {
 		// Initialisation de la variable contenant le résultat
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
@@ -176,10 +181,6 @@ public class Jeu {
 		}
 
 		return res;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(recupererQuestionAleatoire("Vie étudiante"));
 	}
 
 }
