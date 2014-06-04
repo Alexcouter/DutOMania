@@ -1,10 +1,15 @@
 package jeuGraphic;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +18,7 @@ import javax.swing.JRootPane;
 
 public class panelMain extends FenetreBase implements ActionListener {
 	  private JPanel panelMain = null;
+	  private Image bg = null;
 	  private JButton boutonNormal = null;
 	  private JButton boutonSurvie = null;
 	  private JButton boutonQuitter = null;
@@ -30,9 +36,8 @@ public class panelMain extends FenetreBase implements ActionListener {
 	    if (this.panelMain == null)
 	    {
 	    	//Logo a ajouter
-	    	
-	      this.base = new JLabel();
-	      this.base.setBounds(30, 125, 330, 40);
+	    		      this.base = new JLabel();
+	      this.base.setBounds(0, 125, 330, 40);
 	      this.base.setHorizontalTextPosition(0);
 	      this.base.setHorizontalAlignment(0);
 	      this.base.setText("Choisissez le mode de jeu :");
@@ -40,11 +45,13 @@ public class panelMain extends FenetreBase implements ActionListener {
 	      this.panelMain = new JPanel();
 	      this.panelMain.setLayout(null);
 //	      this.panelMain.add(logo);
+//	      this.bg =new JLabel(new ImageIcon(getClass().getResource("/JeuImages/MainDut.jpg")));
+//	      bg.setLayout(new FlowLayout());
 	      this.panelMain.add(getBoutonNormal());
 	      this.panelMain.add(getBoutonSurvie());
 	      this.panelMain.add(getBoutonQuitter());
 	      this.panelMain.add(this.base);
-
+	      
 	    }
 	    return this.panelMain;
 	  }
@@ -101,5 +108,6 @@ public class panelMain extends FenetreBase implements ActionListener {
 		    new FenetreJeu(bouton);
 		    dispose();
 	}	
+	
 
 }
