@@ -27,7 +27,11 @@ public class Question {
 			return false;
 		}
 	}
-
+	
+	public void enleverProposition(int numProp){
+		this.propositions[numProp-1] = null;
+	}
+	
 	public int getIdQuestion() {
 		return idQuestion;
 	}
