@@ -4,8 +4,8 @@ public class ScoreNormal extends Score {
 	
 	private int totalScore;
 	
-	public ScoreNormal(int score) {
-		super(score);
+	public ScoreNormal() {
+		super();
 		this.totalScore = 20;
 	}
 	

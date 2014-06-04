@@ -4,8 +4,8 @@ public class ScoreSurvie extends Score{
 	
 	private int nbVies;
 	
-	public ScoreSurvie(int score, int nbVies) {
-		super(score);
+	public ScoreSurvie(int nbVies) {
+		super();
 		this.nbVies = nbVies;
 	}
 
