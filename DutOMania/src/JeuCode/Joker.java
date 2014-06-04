@@ -60,7 +60,7 @@ public class Joker {
 
 	public void joker42(ScoreNormal sn){
 		this.setDispo(false);
-		sn.miseAJourScore(sn);
+		sn.miseAJourScore();
 
 	}
 
