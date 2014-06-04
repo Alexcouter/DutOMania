@@ -6,6 +6,9 @@ public class TestJeuNormal {
 		JeuNormal jeu = new JeuNormal();
 		
 		jeu.recupererQuestionAleatoire("");
+		for(int i = 0; i < 20; i++){
+			
+		}
 	}
 
 }
