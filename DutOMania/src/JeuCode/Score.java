@@ -5,7 +5,7 @@ public class Score {
 
 	public Score(int score) {
 		super();
-		this.score = score;
+		this.score = 0;
 	}
 
 	public int getScore() {
