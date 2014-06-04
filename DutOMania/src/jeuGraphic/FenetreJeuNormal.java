@@ -14,6 +14,7 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 	private JLabel normalTexteTop = null;
 	private JLabel normalScore = null;
 	private JLabel questionNumero = null;
+	private JLabel progression = null;
 	private JButton boutonQuitter = null;
 
 	public FenetreJeuNormal() {
