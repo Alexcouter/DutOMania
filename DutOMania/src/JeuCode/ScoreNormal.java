@@ -9,8 +9,8 @@ public class ScoreNormal extends Score {
 		this.totalScore = 20;
 	}
 	
-	public void miseAJourScore(ScoreNormal sn){
-		sn.setScore(sn.getScore() + 1);
+	public void miseAJourScore(){
+		this.setScore(this.getScore() + 1);
 	}
 
 	

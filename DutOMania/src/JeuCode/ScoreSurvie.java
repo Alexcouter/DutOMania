@@ -9,12 +9,12 @@ public class ScoreSurvie extends Score{
 		this.nbVies = nbVies;
 	}
 
-	public void miseAJourScore(ScoreSurvie ss){
-		ss.setScore(getScore() + 10);
+	public void miseAJourScore(){
+		this.setScore(this.getScore() + 10);
 	}
 	
-	public void miseAJourVies(ScoreSurvie ss){
-		ss.setNbVies(getNbVies() - 1);
+	public void miseAJourVies(){
+		this.setNbVies(this.getNbVies() - 1);
 	}
 
 	public int getNbVies() {
