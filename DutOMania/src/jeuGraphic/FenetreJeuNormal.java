@@ -110,7 +110,7 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 		this.questionNumero.setHorizontalAlignment(0);
 		this.questionNumero.setBounds(0, 0, 330, 40);
 		this.questionNumero.setLocation(new Point(230,300));
-		this.questionNumero.setText("Question n°"+question.getIdQuestion());
+		this.questionNumero.setText("Question n°"+compteurQuestion);
 		return this.questionNumero;
 	}
 
