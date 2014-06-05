@@ -89,16 +89,19 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 		this.reponse2 = new JButton();
 		this.reponse2.setSize(new Dimension(350, 50));
 		this.reponse2.setText(question.getProposition(2));
+		this.reponse2.addActionListener(new RepondreQuestion());
 		this.reponse2.setLocation(new Point(400,400));
 		this.panelNormal.add(this.reponse2);
 		this.reponse3 = new JButton();
 		this.reponse3.setSize(new Dimension(350, 50));
 		this.reponse3.setText(question.getProposition(3));
+		this.reponse3.addActionListener(new RepondreQuestion());
 		this.reponse3.setLocation(new Point(35,470));
 		this.panelNormal.add(this.reponse3);
 		this.reponse4 = new JButton();
 		this.reponse4.setSize(new Dimension(350, 50));
 		this.reponse4.setText(question.getProposition(4));
+		this.reponse4.addActionListener(new RepondreQuestion());
 		this.reponse4.setLocation(new Point(400,470));
 		this.panelNormal.add(this.reponse4);
 	}
@@ -146,26 +149,32 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			JButton boutonClique = (JButton) e.getSource();
 			boolean resultat = false;
-			if(e.getSource() == reponse1)
+			if(boutonClique == reponse1)
 				resultat = question.checkReponse(1);
-			if(e.getSource() == reponse2)
+			if(boutonClique == reponse2)
 				resultat = question.checkReponse(2);
-			if(e.getSource() == reponse3)
+			if(boutonClique == reponse3)
 				resultat = question.checkReponse(3);
-			if(e.getSource() == reponse4)
+			if(boutonClique == reponse4)
 				resultat = question.checkReponse(4);
 			
 			if(resultat == true){
 				jeu.augmenterScore();
-				reponse1.setBackground(Color.GREEN);
-				reponse1.setContentAreaFilled(false);
-                reponse1.setOpaque(true);
-                System.out.println("Ca marche");
-                reponse1.revalidate();
+				boutonClique.setBackground(Color.GREEN);
+				boutonClique.setContentAreaFilled(false);
+				boutonClique.setOpaque(true);
+                System.out.println("vrai");
+                boutonClique.revalidate();
 			}
 			else{
-				System.out.println("faux");
+				jeu.augmenterScore();
+				boutonClique.setBackground(Color.RED);
+				boutonClique.setContentAreaFilled(false);
+				boutonClique.setOpaque(true);
+                System.out.println("faux");
+                boutonClique.revalidate();			
 			}
 		}
 
