@@ -58,7 +58,6 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 			
 			this.questionTexte = new JLabel(question.getIntituleQuestion());
 			this.questionTexte.setBounds(0, 0, 330, 40);
-//			this.questionTexte.setText("Question");
 			this.questionTexte.setLocation(new Point(230,320));
 			
 			
@@ -165,17 +164,20 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 				boutonClique.setBackground(Color.GREEN);
 				boutonClique.setContentAreaFilled(false);
 				boutonClique.setOpaque(true);
-                System.out.println("vrai");
+                System.out.println("vrai"+jeu.getScore());
                 boutonClique.revalidate();
-			}
+                normalScore.setText("Score : "+jeu.getScore());
+                normalScore.revalidate();
+                }
 			else{
-				jeu.augmenterScore();
 				boutonClique.setBackground(Color.RED);
 				boutonClique.setContentAreaFilled(false);
 				boutonClique.setOpaque(true);
                 System.out.println("faux");
                 boutonClique.revalidate();			
 			}
+			
+			compteurQuestion++;
 		}
 
 	}
