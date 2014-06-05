@@ -1,15 +1,15 @@
 package JeuCode;
 
 public class JeuNormal extends Jeu {
-	private ScoreNormal score;
 
 	public JeuNormal() {
 		super();
-		this.score = score;
+		this.score = new ScoreNormal();
 	}
 	
 	public void augmenterScore(){
-		score.miseAJourScore();
+		if(score instanceof ScoreNormal)
+			((ScoreNormal) score).miseAJourScore();		
 	}
 	
 }

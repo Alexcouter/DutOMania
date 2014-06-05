@@ -12,8 +12,6 @@ public class ScoreNormal extends Score {
 	public void miseAJourScore(){
 		this.setScore(this.getScore() + 1);
 	}
-
-	
 	
 	public int getTotalScore() {
 		return totalScore;

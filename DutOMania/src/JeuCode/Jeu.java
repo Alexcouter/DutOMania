@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Jeu {
+	protected Score score;
 	
 	public Jeu() {
 		super();
@@ -181,6 +182,10 @@ public class Jeu {
 		}
 
 		return res;
+	}
+	
+	public int getScore(){
+		return score.getScore();
 	}
 
 }
