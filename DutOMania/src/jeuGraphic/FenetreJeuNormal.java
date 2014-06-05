@@ -1,5 +1,6 @@
 package jeuGraphic;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -155,9 +156,16 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 			if(e.getSource() == reponse4)
 				resultat = question.checkReponse(4);
 			
-			if(resultat){
+			if(resultat == true){
 				jeu.augmenterScore();
-//				reponse1.setColor
+				reponse1.setBackground(Color.GREEN);
+				reponse1.setContentAreaFilled(false);
+                reponse1.setOpaque(true);
+                System.out.println("Ca marche");
+                reponse1.revalidate();
+			}
+			else{
+				System.out.println("faux");
 			}
 		}
 
