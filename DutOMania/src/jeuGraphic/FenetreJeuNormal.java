@@ -30,12 +30,13 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 	private JButton reponse4 = null;
 	private int compteurQuestion = 0;
 	private JeuNormal jeu = new JeuNormal();
-	private Question question = jeu.recupererQuestionAleatoire();
+	private Question question = jeu.chargerQuestion();
 
 	public FenetreJeuNormal() {
 		super("Mode normal");
 		setContentPane(getPanelSurvie());
 		validate();	
+		
 	}		
 
 	private JPanel getPanelSurvie() {

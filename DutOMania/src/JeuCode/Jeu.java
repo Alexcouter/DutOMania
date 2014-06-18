@@ -18,11 +18,18 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Jeu {
+	private ListeQuestions listeQuestion = new ListeQuestions();
 	protected Score score;
 	
 	public Jeu() {
 		super();
 		// TODO Auto-generated constructor stub
+		
+	}
+	
+	public Question chargerQuestion(){
+		return listeQuestion.getQuestionAleatoire();
+		
 	}
 
 	

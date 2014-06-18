@@ -15,12 +15,14 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ListeQuestions {
-	private ArrayList<Question> listeQuestions;
+	private ArrayList<Question> listeQuestions = new ArrayList();
 
 	public ListeQuestions() {
 		super();
+//		listeQuestions ;
 		for(int i = 1; i <= getNombreQuestionsXML(); i++){
 			ajouterQuestion(getQuestionXML(i));
+			
 		}
 	}
 	

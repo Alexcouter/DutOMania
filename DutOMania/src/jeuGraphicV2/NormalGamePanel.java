@@ -11,10 +11,11 @@ import javax.swing.*;
 import jeuGraphic.FenetreJeuNormal.RepondreQuestion;
 
 import JeuCode.JeuNormal;
+import JeuCode.ListeQuestions;
 import JeuCode.Question;
 
 public class NormalGamePanel extends JPanel {
-	private Question question;
+	private JeuNormal jeu = new JeuNormal();
 	private JPanel panelNormal = null;
 	private JLabel normalTexteTop = null;
 	private JLabel normalScore = null;
@@ -26,9 +27,10 @@ public class NormalGamePanel extends JPanel {
 	private JButton reponse2 = null;
 	private JButton reponse3 = null;
 	private JButton reponse4 = null;
-	private JeuNormal jeu = new JeuNormal();
+	private Question question = jeu.chargerQuestion();
 	private int compteurQuestion = 1;
 	private JButton suivant;
+	
 	
 	public NormalGamePanel(){
 		
