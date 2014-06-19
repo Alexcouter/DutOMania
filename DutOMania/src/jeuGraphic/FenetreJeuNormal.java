@@ -34,12 +34,12 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 
 	public FenetreJeuNormal() {
 		super("Mode normal");
-		setContentPane(getPanelSurvie());
+		setContentPane(getPanelNormal());
 		validate();	
 		
 	}		
 
-	private JPanel getPanelSurvie() {
+	private JPanel getPanelNormal() {
 		if (this.panelNormal == null)
 		{
 			

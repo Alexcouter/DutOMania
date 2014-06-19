@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import jeuGraphic.panelMain;
 import jeuGraphic.FenetreJeuNormal.RepondreQuestion;
 
 import JeuCode.JeuNormal;
@@ -38,6 +39,16 @@ public class NormalGamePanel extends JPanel {
 		normalTexteTop = new JLabel("- Mode Normal -");
 		
 		questionTexte = new JLabel("Question");
+		
+		questionNumero = new JLabel();
+//		questionNumero.setHorizontalAlignment(0);
+//		questionNumero.setBounds(0, 0, 330, 40);
+		questionNumero.setLocation(new Point(230,300));
+		questionNumero.setText("Question n°"+compteurQuestion);
+		
+		normalScore = new JLabel();
+		normalScore.setLocation(new Point(710,0));
+		normalScore.setText("Score : "+jeu.getScore());
 		
 		reponse1 = new JButton();
 		reponse1.setSize(new Dimension(350, 50));
@@ -75,6 +86,25 @@ public class NormalGamePanel extends JPanel {
 		this.suivant.setLocation(new Point(300,540));
 		this.suivant.setVisible(false);
 		
+		if (this.boutonQuitter == null)
+		{
+			this.boutonQuitter  = new JButton();
+			this.boutonQuitter.setSize(new Dimension(150, 25));
+			this.boutonQuitter.setText("Quitter la partie");
+			this.boutonQuitter.setLocation(new Point(550,10));
+//			getRootPane().setDefaultButton(boutonQuitter);
+			this.boutonQuitter.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+//					DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
+					DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
+					DutOManiaWindow.cont.validate();
+					
+				}
+			});
+			
+		}
 		
 		
 		
@@ -104,7 +134,7 @@ public class NormalGamePanel extends JPanel {
 		panelNormal.setLayout(null);
 		
 		
-		//bar de progession
+		//barre de progession
 		
 	
 		

@@ -18,11 +18,14 @@ public class DutOManiaWindow extends JFrame {
 	    //taille 800x600
 	    
 	    setSize(800, 600);
-//	    setLayout(new FlowLayout(1));
+//	    setLayout(new CardLayout());
 	    
 	    //Ajout des panels
 	    cont = getContentPane();
 	    cont.add(menuPrincipal);
+//	    cont.add(menuChoixSurvie);
+//	    cont.add(ecranJeuNormal);   
+	   
 	    
 	    //Centré au lancement
 	    

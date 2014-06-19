@@ -49,6 +49,7 @@ public class MainMenuPanel extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.add(DutOManiaWindow.ecranJeuNormal);
 				DutOManiaWindow.cont.validate();
 			}
@@ -57,6 +58,7 @@ public class MainMenuPanel extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuChoixSurvie);
 				DutOManiaWindow.cont.validate();
 			}
