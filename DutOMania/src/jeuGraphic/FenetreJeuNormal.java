@@ -49,7 +49,7 @@ public class FenetreJeuNormal extends FenetreBase implements ActionListener {
 			//texte en haut à gauche
 			this.normalTexteTop = new JLabel();
 
-			//setBounds(x,y,width,height)
+//			setBounds(x,y,width,height)
 
 			this.normalTexteTop.setBounds(0, 0, 100, 40);
 

@@ -17,22 +17,22 @@ public class BareProgression extends JFrame{
 		setVisible(true);
 
 	}
-	
+
 	public void paint(Graphics g){
-		
+
 		for (int i=1;i <= 20;i++){
-//			Rectangle  = new Rectangle(i);
-			
+			//			Rectangle  = new Rectangle(i);
+
 		}
-		
+
 	}
-	
+
 	public class Rectangle{
 		private int id;
 		private int lon;
 		private int larg;
 		private Color c;
-		
+
 		public Rectangle(int id) {
 			super();
 			this.id = id;
@@ -72,7 +72,7 @@ public class BareProgression extends JFrame{
 		public void setC(Color c) {
 			this.c = c;
 		}
-		
+
 	}
 
 
