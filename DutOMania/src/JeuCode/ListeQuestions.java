@@ -13,6 +13,22 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.NodeList;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ListeQuestions {
 	private ArrayList<Question> listeQuestions;
@@ -20,14 +36,22 @@ public class ListeQuestions {
 	public ListeQuestions() {
 		super();
 		listeQuestions = new ArrayList<Question>() ;
-		for(int i = 1; i <= getNombreQuestionsXML(); i++){
+		System.out.println(getNombreQuestionsXML());
+		for(int i = 0; i < getNombreQuestionsXML(); i++){
+			System.out.println(i+" tour de boucle contructeur");
 			ajouterQuestion(getQuestionXML(i));
+			System.out.println(listeQuestions.get(i).getIntituleQuestion());
 			
 		}
+		
 	}
 	
 	public void ajouterQuestion(Question q){
 		listeQuestions.add(q);
+	}
+	
+	public Question getQuestion(int id){
+		return listeQuestions.get(id);
 	}
 	
 	public int getNombreQuestions(){
@@ -37,14 +61,19 @@ public class ListeQuestions {
 	public Question getQuestionAleatoire(){
 		Random r = new Random();
 		int id = 1 + r.nextInt(getNombreQuestions() - 1);
+//		int id = (int) (Math.random()*getNombreQuestionsXML()+1);
 		return listeQuestions.get(id);
 	}
 
 	// Méthode retournant une question indentifiée par son id
-	public static Question getQuestionXML(int id) {
+	public Question getQuestionXML(int id) {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		Question res = null;
+		System.out.println(id+" passé gans le getter");
+		if(id > getNombreQuestionsXML() || id == 0){
+			System.out.println("Erreur");
+		}
 		try {
 			// Création d'un parseur
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -140,5 +169,6 @@ public class ListeQuestions {
 		
 		return res;
 	}
+	
 
 }
