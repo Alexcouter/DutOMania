@@ -23,6 +23,7 @@ public class DutOManiaWindow extends JFrame {
 	    //Ajout des panels
 	    cont = getContentPane();
 	    cont.add(menuPrincipal);
+	   
 	    
 	    //Centré au lancement
 	    

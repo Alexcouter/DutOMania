@@ -21,7 +21,7 @@ public class BareProgression extends JFrame{
 	public void paint(Graphics g){
 		
 		for (int i=1;i <= 20;i++){
-			Rectangle  = new Rectangle(i);
+//			Rectangle  = new Rectangle(i);
 			
 		}
 		
