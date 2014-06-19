@@ -2,6 +2,8 @@ package jeuGraphicV2;
 
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -11,6 +13,7 @@ public class SurvivalChoicePanel extends JPanel {
 	private JButton boutonNormal;
 	private JButton boutonDifficile;
 	private JButton boutonRetour;
+	public int difficulte;
 	
 	public SurvivalChoicePanel(){
 		//texte au dessus des boutons
@@ -47,6 +50,21 @@ public class SurvivalChoicePanel extends JPanel {
 		boutonRetour.setText("Retour");
 		boutonRetour.setLocation(new Point(50,500));
 		
+		//Ajout des listener au boutons
+		boutonFacile.addActionListener(new defDificulteSurvie());
+		boutonNormal.addActionListener(new defDificulteSurvie());
+		boutonDifficile.addActionListener(new defDificulteSurvie());
+		boutonRetour.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.menuChoixSurvie);
+				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
+				DutOManiaWindow.cont.validate();
+				
+			}
+		});
+		
 		//Ajout des boutons
 		setLayout(null);
 		add(boutonFacile);
@@ -54,6 +72,31 @@ public class SurvivalChoicePanel extends JPanel {
 		add(boutonDifficile);
 		add(boutonRetour);
 		add(survieChoixTxt);
+		
+	}
+	
+	public class defDificulteSurvie implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JButton boutonClique = (JButton) e.getSource();
+			
+			if(boutonClique == boutonFacile){
+				difficulte = 1;
+				DutOManiaWindow.ecranJeuSurvie.jeu.setDifficulte(difficulte);
+				
+			}else if(boutonClique == boutonNormal){
+				difficulte = 2;
+				DutOManiaWindow.ecranJeuSurvie.jeu.setDifficulte(difficulte);
+			}else{
+				difficulte = 3;
+				DutOManiaWindow.ecranJeuSurvie.jeu.setDifficulte(difficulte);
+			}
+			DutOManiaWindow.cont.remove(DutOManiaWindow.menuChoixSurvie);
+			DutOManiaWindow.cont.add(DutOManiaWindow.ecranJeuSurvie);
+			DutOManiaWindow.cont.validate();
+			
+		}
 		
 	}
 }

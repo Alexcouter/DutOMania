@@ -45,6 +45,10 @@ public class ListeQuestions {
 		}
 		
 	}
+	public void supprimerQuestion(Question q){
+		listeQuestions.remove(q);
+		
+	}
 	
 	public void ajouterQuestion(Question q){
 		listeQuestions.add(q);

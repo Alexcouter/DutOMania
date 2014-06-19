@@ -31,6 +31,16 @@ public class Jeu {
 		return listeQuestion.getQuestionAleatoire();
 		
 	}
+	public void enleverQuestionListe(Question q){
+		listeQuestion.supprimerQuestion(q);
+	}
+	
+	public void augmenterScore(){
+		if(score instanceof ScoreNormal)
+			((ScoreNormal) score).miseAJourScore();
+		else if (score instanceof ScoreSurvie)
+			((ScoreSurvie) score).miseAJourScore();
+	}
 
 	
 	

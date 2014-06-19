@@ -8,6 +8,7 @@ public class DutOManiaWindow extends JFrame {
 	public static MainMenuPanel menuPrincipal = new MainMenuPanel();
 	public static SurvivalChoicePanel menuChoixSurvie = new SurvivalChoicePanel();
 	public static NormalGamePanel ecranJeuNormal = new NormalGamePanel();
+	public static SurvieGamePanel ecranJeuSurvie = new SurvieGamePanel();
 	public static Container cont;
 	
 	public DutOManiaWindow(){
@@ -23,8 +24,7 @@ public class DutOManiaWindow extends JFrame {
 	    //Ajout des panels
 	    cont = getContentPane();
 	    cont.add(menuPrincipal);
-//	    cont.add(menuChoixSurvie);
-//	    cont.add(ecranJeuNormal);   
+  
 	   
 	    
 	    //Centré au lancement
