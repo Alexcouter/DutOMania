@@ -134,7 +134,7 @@ public class NormalGamePanel extends JPanel {
 		panelNormal.setLayout(null);
 		
 		
-		//bar de progession
+		//barre de progession
 		
 	
 		
