@@ -30,10 +30,7 @@ public class Question {
 		}
 	}
 	
-	public void enleverProposition(int numProp){
-		this.propositions[numProp-1] = null;
-	}
-	
+		
 	public int getIdQuestion() {
 		return idQuestion;
 	}
@@ -69,5 +66,7 @@ public class Question {
 				+ Arrays.toString(propositions) + ", reponse=" + reponse
 				+ ", theme=" + theme + "]";
 	}
+
+	
 	
 }
