@@ -1,5 +1,7 @@
 package JeuCode;
 
+import javax.swing.JButton;
+
 public class Joker {
 
 	private String nom;
@@ -12,14 +14,15 @@ public class Joker {
 	}
 
 
-	public void jokerMoitMoit (Question q){
+	public void jokerMoitMoit (Question q, JButton b1, JButton b2, JButton b3, JButton b4){
 		int prop1 = 0;
 		int prop2 = 0;
 		int choix;
-
 		this.setDispo(false);
+		System.out.println("enlève une rep");
 		do{
-			choix = (int) Math.random()*4;
+			choix = (int) (Math.random()*4);
+			System.out.println(choix);
 			
 			switch(choix){
 			case 0 : prop1 = 1;
@@ -31,11 +34,14 @@ public class Joker {
 			case 3 : prop1 = 4;
 			break;
 			}	
+			System.out.println("pas encore");
 		}
 		while(prop1 == q.getReponse());
+		System.out.println("fait, 2ème");
 		
 		do{
-			choix = (int) Math.random()*4;
+			choix = (int) (Math.random()*4);
+			System.out.println(choix);
 			
 			switch(choix){
 			case 0 : prop2 = 1;
@@ -47,12 +53,22 @@ public class Joker {
 			case 3 : prop2 = 4;
 			break;
 			}	
+			System.out.println("deuxième pas encore");
 		}
 		while(prop2 == q.getReponse() || prop2 == prop1);
+		System.out.println("fait");
 		
-		q.enleverProposition(prop1);
-		q.enleverProposition(prop2);
-
+//		q.enleverProposition(prop1);
+//		q.enleverProposition(prop2);
+		if(prop1 == 1 || prop2 == 1)
+			b1.setEnabled(false);
+		if(prop1 == 2 || prop2 == 2)
+			b2.setEnabled(false);
+		if(prop1 == 3 || prop2 == 3)
+			b3.setEnabled(false);
+		if(prop1 == 4 || prop2 == 4)
+			b4.setEnabled(false);
+System.out.println("fini");
 
 	}
 

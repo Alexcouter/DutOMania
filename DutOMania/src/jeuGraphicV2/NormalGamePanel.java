@@ -13,12 +13,16 @@ import jeuGraphic.FenetreJeuNormal.RepondreQuestion;
 
 import JeuCode.Jeu;
 import JeuCode.JeuNormal;
+import JeuCode.Joker;
 import JeuCode.ListeQuestions;
 import JeuCode.Question;
 
 public class NormalGamePanel extends JPanel {
+	private Joker moitMoit = new Joker("MoitMoit", true);
+	private Joker j42 = new Joker("42", true);
 	private JeuNormal jeu = new JeuNormal();
-
+	private JButton b42;
+	private JButton bMoitMoit;
 	private JLabel normalTexteTop = null;
 	private JLabel normalScore = null;
 	private JLabel questionNumero = null;
@@ -52,6 +56,31 @@ public class NormalGamePanel extends JPanel {
 		questionTexte = new JLabel("Question");
 		questionTexte.setBounds(0, 0, 330, 40);
 		questionTexte.setLocation(new Point(230,320));
+		
+		b42 = new JButton("42");
+		b42.setSize(new Dimension(50, 25));
+		b42.setLocation(new Point(400, 200));
+		b42.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		bMoitMoit = new JButton("MoitMoit");
+		bMoitMoit.setSize(new Dimension(50, 25));
+		bMoitMoit.setLocation(new Point(470, 200));
+		bMoitMoit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if (moitMoit.isDispo() == true)
+					moitMoit.jokerMoitMoit(question, reponse1, reponse2, reponse3, reponse4);
+				repaint();
+			}
+		});
 
 
 
@@ -162,6 +191,8 @@ public class NormalGamePanel extends JPanel {
 		add(reponse3);
 		add(reponse4);
 		add(suivant);
+		add(b42);
+		add(bMoitMoit);
 
 	}
 
