@@ -61,6 +61,7 @@ public class SurvivalChoicePanel extends JPanel {
 				DutOManiaWindow.cont.remove(DutOManiaWindow.menuChoixSurvie);
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
 				
 			}
 		});
@@ -95,6 +96,7 @@ public class SurvivalChoicePanel extends JPanel {
 			DutOManiaWindow.cont.remove(DutOManiaWindow.menuChoixSurvie);
 			DutOManiaWindow.cont.add(DutOManiaWindow.ecranJeuSurvie);
 			DutOManiaWindow.cont.validate();
+			DutOManiaWindow.cont.repaint();
 			
 		}
 		

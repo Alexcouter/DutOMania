@@ -125,7 +125,7 @@ public class NormalGamePanel extends JPanel {
 					DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
 					DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 					DutOManiaWindow.cont.validate();
-
+					DutOManiaWindow.cont.repaint();
 				}
 			});
 

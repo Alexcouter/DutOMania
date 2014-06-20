@@ -52,6 +52,7 @@ public class MainMenuPanel extends JPanel {
 				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.add(DutOManiaWindow.ecranJeuNormal);
 				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
 			}
 		});
 		boutonSurvie.addActionListener(new ActionListener() {
@@ -61,6 +62,7 @@ public class MainMenuPanel extends JPanel {
 				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuChoixSurvie);
 				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
 			}
 		});
 		boutonQuitter.addActionListener(new ActionListener() {
