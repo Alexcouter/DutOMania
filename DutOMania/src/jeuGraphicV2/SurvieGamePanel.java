@@ -32,6 +32,7 @@ public class SurvieGamePanel extends JPanel{
 	private JButton reponse4 = null;
 	private Question question = jeu.chargerQuestion();
 	private JButton suivant;
+	private Color couleurDefautBouton;
 	
 	public SurvieGamePanel(){
 		
@@ -127,6 +128,7 @@ public class SurvieGamePanel extends JPanel{
 				});
 				
 				//chargement de l'interface
+				Color couleurDefautBoutoncouleurDefautBouton = reponse1.getBackground();
 				chargerInterfaceReponse();
 				
 				// Creation du panel
@@ -152,6 +154,11 @@ public class SurvieGamePanel extends JPanel{
 		reponse2.setEnabled(true);
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
+		
+		reponse1.setBackground(couleurDefautBouton);
+		reponse2.setBackground(couleurDefautBouton);
+		reponse3.setBackground(couleurDefautBouton);
+		reponse4.setBackground(couleurDefautBouton);
 
 		suivant.setVisible(false);
 
