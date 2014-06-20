@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import jeuGraphicV2.NormalGamePanel.RepondreQuestion;
-
 import JeuCode.JeuNormal;
 import JeuCode.JeuSurvie;
 import JeuCode.Question;
@@ -122,6 +121,7 @@ public class SurvieGamePanel extends JPanel{
 						DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
 						DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 						DutOManiaWindow.cont.validate();
+						DutOManiaWindow.cont.repaint();
 
 					}
 				});
