@@ -1,18 +1,21 @@
 package jeuGraphicV2;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
-import jeuGraphic.FenetreJeu;
 import JeuImages.MainDut;
 
 public class MainMenuPanel extends JPanel {
 	private JButton boutonNormal = null;
 	private JButton boutonSurvie = null;
 	private JButton boutonQuitter = null;
+	private JButton boutonGestionnaire;
 	
 	public MainMenuPanel() {
 		//Image de fond
@@ -38,11 +41,25 @@ public class MainMenuPanel extends JPanel {
 		boutonQuitter.setLocation(new Point(240,500));
 		boutonQuitter.setText("Quitter le jeu");
 		
+		//Création bouton gestionnaire
+		boutonGestionnaire = new JButton("Gestionnaire de questions");
+		boutonGestionnaire.setSize(new Dimension(190, 20));
+		boutonGestionnaire.setLocation(new Point(590, 540));
+		boutonGestionnaire.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new GestionnaireWindow();
+				
+			}
+		});
+		
 		//Ajout des boutons
 		setLayout(null);
 		add(boutonNormal);
 		add(boutonQuitter);
 		add(boutonSurvie);
+		add(boutonGestionnaire);
 		add(backGround);
 		
 		//ActionListeners
