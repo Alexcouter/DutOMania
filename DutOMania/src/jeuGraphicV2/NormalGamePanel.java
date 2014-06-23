@@ -57,28 +57,30 @@ public class NormalGamePanel extends JPanel {
 		questionTexte = new JLabel("Question");
 		questionTexte.setBounds(0, 0, 330, 40);
 		questionTexte.setLocation(new Point(230,320));
-		
+
 		b42 = new JButton("42");
 		b42.setSize(new Dimension(50, 25));
-		b42.setLocation(new Point(400, 200));
+		b42.setLocation(new Point(600, 300));
 		b42.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+				j42.joker42();
+				b42.setEnabled(false);
 				
 			}
 		});
-		
+
 		bMoitMoit = new JButton("MoitMoit");
-		bMoitMoit.setSize(new Dimension(50, 25));
-		bMoitMoit.setLocation(new Point(470, 200));
+		bMoitMoit.setSize(new Dimension(100, 25));
+		bMoitMoit.setLocation(new Point(660, 300));
 		bMoitMoit.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (moitMoit.isDispo() == true)
 					moitMoit.jokerMoitMoit(question, reponse1, reponse2, reponse3, reponse4);
+				bMoitMoit.setEnabled(false);
 				repaint();
 			}
 		});
@@ -261,6 +263,18 @@ public class NormalGamePanel extends JPanel {
 			compteurQuestion++;
 		}
 
-	}	
-	
+	}
+
+	public JeuNormal getJeu() {
+		return jeu;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
 }

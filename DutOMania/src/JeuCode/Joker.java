@@ -2,6 +2,8 @@ package JeuCode;
 
 import javax.swing.JButton;
 
+import jeuGraphicV2.DutOManiaWindow;
+
 public class Joker {
 
 	private String nom;
@@ -74,9 +76,12 @@ System.out.println("fini");
 
 
 
-	public void joker42(ScoreNormal sn){
+	public void joker42(){
 		this.setDispo(false);
-		sn.miseAJourScore();
+		DutOManiaWindow.ecranJeuNormal.getJeu().augmenterScore();
+		DutOManiaWindow.ecranJeuNormal.setQuestion(DutOManiaWindow.ecranJeuNormal.getJeu().chargerQuestion());
+		DutOManiaWindow.ecranJeuNormal.chargerInterfaceReponse();
+		DutOManiaWindow.ecranJeuNormal.resetBoutons();	
 
 	}
 
