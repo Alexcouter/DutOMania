@@ -64,7 +64,12 @@ public class SurvieGamePanel extends JPanel{
 				survieScore = new JLabel();
 				survieScore.setBounds(0, 0, 100, 40);
 				survieScore.setLocation(new Point(710,0));
-				survieScore.setText("Score : "+jeu.getScore().getScore());
+				
+				
+				vies = new JLabel();
+				vies.setBounds(0, 0, 100, 40);
+				vies.setLocation(new Point(200,0));
+				
 				
 				
 				
@@ -135,7 +140,7 @@ public class SurvieGamePanel extends JPanel{
 				
 				//chargement de l'interface
 				Color couleurDefautBoutoncouleurDefautBouton = reponse1.getBackground();
-				chargerInterfaceReponse();
+				
 				
 				// Creation du panel
 				setLayout(null);
@@ -151,7 +156,11 @@ public class SurvieGamePanel extends JPanel{
 				add(reponse3);
 				add(reponse4);
 				add(suivant);
+				add(vies);
 				
+				
+				
+				chargerInterfaceReponse();
 		
 	}
 	
@@ -173,11 +182,13 @@ public class SurvieGamePanel extends JPanel{
 
 	public void chargerInterfaceReponse(){
 		survieScore.setText("Score : "+jeu.getScore().getScore());
+		vies.setText("Vies : "+jeu.getScore().getNbVies());
 		reponse1.setText(question.getProposition(1));
 		reponse2.setText(question.getProposition(2));
 		reponse3.setText(question.getProposition(3));
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
+		System.out.println(jeu.getScore().getNbVies());
 	}
 	
 	
@@ -241,6 +252,12 @@ public class SurvieGamePanel extends JPanel{
 
 		}
 
+	}
+
+
+	public void miseAJourVies() {
+		vies.setText("Vies : "+jeu.getScore().getNbVies());
+		
 	}
 	
 	

@@ -93,6 +93,7 @@ public class SurvivalChoicePanel extends JPanel {
 				difficulte = 3;
 				DutOManiaWindow.ecranJeuSurvie.jeu.setDifficulte(difficulte);
 			}
+			DutOManiaWindow.ecranJeuSurvie.miseAJourVies();
 			DutOManiaWindow.cont.remove(DutOManiaWindow.menuChoixSurvie);
 			DutOManiaWindow.cont.add(DutOManiaWindow.ecranJeuSurvie);
 			DutOManiaWindow.cont.validate();
