@@ -207,7 +207,7 @@ public class NormalGamePanel extends JPanel {
 	
 	  public void paintComponent(Graphics g)
 	  {
-		  g.drawImage(this.bg, 0, 0, 793, 572, this);
+		  g.drawImage(this.bg, 0, 0, 794, 572, this);
 	  }
 
 	public void resetBoutons(){
