@@ -2,6 +2,7 @@ package jeuGraphicV2;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +11,6 @@ import javax.swing.*;
 
 import jeuGraphic.panelMain;
 import jeuGraphic.FenetreJeuNormal.RepondreQuestion;
-
 import JeuCode.Jeu;
 import JeuCode.JeuNormal;
 import JeuCode.Joker;
@@ -161,25 +161,12 @@ public class NormalGamePanel extends JPanel {
 
 		}
 
-
-
-
-
-
 		//set des l'interface question
 		couleurDefautBouton = reponse1.getBackground();
 		chargerInterfaceReponse();
 
-
-
-
-
 		// Creation du panel
 		setLayout(null);
-
-		//barre de progession
-
-
 
 		//Ajout des éléments au panel
 		add(normalTexteTop);
@@ -267,4 +254,12 @@ public class NormalGamePanel extends JPanel {
 		}
 
 	}
+
+	@Override
+	public void paint(Graphics g) {
+		barre.dessiner(g);
+		repaint();
+	}
+	
+	
 }
