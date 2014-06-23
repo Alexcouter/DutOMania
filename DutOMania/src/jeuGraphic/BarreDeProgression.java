@@ -1,4 +1,4 @@
-package jeuGraphicV2;
+package jeuGraphic;
 
 import java.awt.Color;
 import java.awt.Graphics;

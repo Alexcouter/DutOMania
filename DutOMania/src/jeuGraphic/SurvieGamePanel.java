@@ -1,4 +1,4 @@
-package jeuGraphicV2;
+package jeuGraphic;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import jeuGraphicV2.NormalGamePanel.RepondreQuestion;
+import jeuGraphic.NormalGamePanel.RepondreQuestion;
 import JeuCode.JeuNormal;
 import JeuCode.JeuSurvie;
 import JeuCode.Question;

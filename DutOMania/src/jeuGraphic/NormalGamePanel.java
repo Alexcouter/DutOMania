@@ -1,4 +1,4 @@
-package jeuGraphicV2;
+package jeuGraphic;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,8 +14,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import jeuGraphic.panelMain;
-import jeuGraphic.FenetreJeuNormal.RepondreQuestion;
 import JeuCode.Jeu;
 import JeuCode.JeuNormal;
 import JeuCode.Joker;

@@ -2,7 +2,7 @@ package JeuCode;
 
 import javax.swing.JButton;
 
-import jeuGraphicV2.DutOManiaWindow;
+import jeuGraphic.DutOManiaWindow;
 
 public class Joker {
 
