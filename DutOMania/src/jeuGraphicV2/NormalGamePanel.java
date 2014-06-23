@@ -71,8 +71,9 @@ public class NormalGamePanel extends JPanel {
 		normalTexteTop.setLocation(new Point(10,0));
 
 		questionTexte = new JLabel("Question");
-		questionTexte.setBounds(0, 0, 330, 40);
-		questionTexte.setLocation(new Point(230,320));
+		questionTexte.setBounds(0, 0, 750, 60);
+		questionTexte.setLocation(new Point(35,310));
+		questionTexte.setHorizontalAlignment(SwingConstants.CENTER);
 
 		b42 = new JButton("42");
 		b42.setSize(new Dimension(50, 25));
@@ -228,12 +229,16 @@ public class NormalGamePanel extends JPanel {
 
 	public void chargerInterfaceReponse(){
 		questionNumero.setText("Question n°"+compteurQuestion);
+		questionNumero.setForeground(Color.WHITE);
+		questionNumero.setBounds(35,290, 750, 60);
+		questionNumero.setHorizontalAlignment(SwingConstants.CENTER);
 		normalScore.setText("Score : "+jeu.getScore().getScore());
 		reponse1.setText(question.getProposition(1));
 		reponse2.setText(question.getProposition(2));
 		reponse3.setText(question.getProposition(3));
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
+		questionTexte.setForeground(Color.WHITE);
 	}
 
 	//Listener des boutons de réponse
