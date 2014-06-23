@@ -43,30 +43,25 @@ public class NormalGamePanel extends JPanel {
 	private JButton suivant;
 	private Color couleurDefautBouton;
 	private BarreDeProgression barre = new BarreDeProgression();
-	  private Image bg;
+	private Image bg;
 
 
 	public NormalGamePanel(){
-		
-	    try
-	    {
-	      this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/BgdeBase.jpg"));
-	    }
-	    catch (IOException e)
-	    {
-	      e.printStackTrace();
-	    }
-		
+
+		try
+		{
+			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/BgdeBase.jpg"));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
 
 		//céation des éléments du panel
 		normalTexteTop = new JLabel("- Mode Normal -");
 
 		normalTexteTop.setBounds(0, 0, 100, 40);
-
-		//		normalTexteTop.setLocation(new Point(10,0));
-		//		
-		//		questionTexte.setBounds(0, 0, 330, 40);
-		//		questionTexte.setLocation(new Point(230,320));
 
 		normalTexteTop.setLocation(new Point(10,0));
 
@@ -79,12 +74,19 @@ public class NormalGamePanel extends JPanel {
 		b42.setSize(new Dimension(50, 25));
 		b42.setLocation(new Point(600, 300));
 		b42.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				j42.joker42();
 				b42.setEnabled(false);
-				
+				questionNumero.setText("Question n°"+compteurQuestion);
+				barre.bonneReponse(compteurQuestion-1);
+				barre.nouvelleQuestion(compteurQuestion);
+				compteurQuestion++;
+				barre.revalidate();
+				barre.repaint();
+
+
 			}
 		});
 
@@ -92,7 +94,7 @@ public class NormalGamePanel extends JPanel {
 		bMoitMoit.setSize(new Dimension(100, 25));
 		bMoitMoit.setLocation(new Point(660, 300));
 		bMoitMoit.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (moitMoit.isDispo() == true)
@@ -143,18 +145,23 @@ public class NormalGamePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jeu.enleverQuestionListe(question);
-				try {
-					question = jeu.chargerQuestion();
-					chargerInterfaceReponse();
-					resetBoutons();	
-				} catch (Exception e) {
-					System.out.println("Pas encore assez de question pour finir");
+				if( compteurQuestion < 20){
+					try {
+						question = jeu.chargerQuestion();
+						chargerInterfaceReponse();
+						resetBoutons();	
+					} catch (Exception e) {
+						System.out.println("Pas encore assez de question pour finir");
+					}
+				}else{
+					DutOManiaWindow.ecrantFinJeuNormal.setTexteFinal();
+					DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
+					DutOManiaWindow.cont.add(DutOManiaWindow.ecrantFinJeuNormal);
+					DutOManiaWindow.cont.validate();
+					DutOManiaWindow.cont.repaint();
+					
 				}
-
-
-
-
-				repaint();
+				repaint(); 
 
 			}
 		});
@@ -205,11 +212,11 @@ public class NormalGamePanel extends JPanel {
 		add(barre);
 
 	}
-	
-	  public void paintComponent(Graphics g)
-	  {
-		  g.drawImage(this.bg, 0, 0, 794, 572, this);
-	  }
+
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(this.bg, 0, 0, 794, 572, this);
+	}
 
 	public void resetBoutons(){
 		reponse1.setEnabled(true);
