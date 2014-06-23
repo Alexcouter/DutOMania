@@ -7,10 +7,14 @@ public class JeuSurvie extends Jeu {
 	public JeuSurvie(/*ScoreSurvie score*/) {
 		super();
 		this.score = new ScoreSurvie(0);
-//		this.difficulte = 0;
+
 				
 	}
 	
+	public void augmenterScore(){
+		if(score instanceof ScoreSurvie)
+			((ScoreSurvie) score).miseAJourScore();		
+	}
 	
 	public void gererVies(){
 		score.miseAJourVies();
@@ -40,6 +44,10 @@ public class JeuSurvie extends Jeu {
 	public int nbVieRestante(){
 		return score.getNbVies();
 		
+	}
+
+	public ScoreSurvie getScore() {
+		return score;
 	}
 
 	

@@ -23,7 +23,7 @@ public class Jeu {
 	
 	public Jeu() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 		
 	}
 	
@@ -35,17 +35,12 @@ public class Jeu {
 		listeQuestion.supprimerQuestion(q);
 	}
 	
-	public void augmenterScore(){
-		if(score instanceof ScoreNormal)
-			((ScoreNormal) score).miseAJourScore();
-		else if (score instanceof ScoreSurvie)
-			((ScoreSurvie) score).miseAJourScore();
+	public Score getScore() {
+		return score;
 	}
 
 	
 	
-	public int getScore(){
-		return score.getScore();
-	}
+	
 
 }

@@ -37,7 +37,7 @@ public class NormalGamePanel extends JPanel {
 	private int compteurQuestion = 1;
 	private JButton suivant;
 	private Color couleurDefautBouton;
-	private BarreDeProgression barre = new BarreDeProgression();
+//	private BarreDeProgression barre = new BarreDeProgression();
 
 
 	public NormalGamePanel(){
@@ -202,7 +202,7 @@ public class NormalGamePanel extends JPanel {
 
 	public void chargerInterfaceReponse(){
 		questionNumero.setText("Question n°"+compteurQuestion);
-		normalScore.setText("Score : "+jeu.getScore());
+		normalScore.setText("Score : "+jeu.getScore().getScore());
 		reponse1.setText(question.getProposition(1));
 		reponse2.setText(question.getProposition(2));
 		reponse3.setText(question.getProposition(3));
@@ -237,9 +237,9 @@ public class NormalGamePanel extends JPanel {
 				boutonClique.setBackground(Color.GREEN);
 				boutonClique.setContentAreaFilled(false);
 				boutonClique.setOpaque(true);
-				System.out.println("vrai"+jeu.getScore());
+				System.out.println("vrai"+jeu.getScore().getScore());
 				boutonClique.revalidate();
-				normalScore.setText("Score : "+jeu.getScore());
+				normalScore.setText("Score : "+jeu.getScore().getScore());
 				normalScore.revalidate();
 			}
 			else{

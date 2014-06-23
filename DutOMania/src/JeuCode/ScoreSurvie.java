@@ -13,6 +13,7 @@ public class ScoreSurvie extends Score{
 		this.setScore(this.getScore() + 10);
 	}
 	
+
 	public void miseAJourVies(){
 		this.setNbVies(this.getNbVies() - 1);
 	}

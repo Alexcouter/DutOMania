@@ -16,7 +16,7 @@ import JeuCode.JeuSurvie;
 import JeuCode.Question;
 
 public class SurvieGamePanel extends JPanel{
-	public JeuSurvie jeu =  new JeuSurvie();;
+	public JeuSurvie jeu =  new JeuSurvie();
 
 	private JLabel vies = null;
 	private JLabel survieTexteTop = null;
@@ -38,6 +38,7 @@ public class SurvieGamePanel extends JPanel{
 		
 		//céation des éléments du panel
 				survieTexteTop = new JLabel("- Mode Survie -");
+				
 
 				survieTexteTop.setBounds(0, 0, 100, 40);
 
@@ -63,6 +64,10 @@ public class SurvieGamePanel extends JPanel{
 				survieScore = new JLabel();
 				survieScore.setBounds(0, 0, 100, 40);
 				survieScore.setLocation(new Point(710,0));
+				survieScore.setText("Score : "+jeu.getScore().getScore());
+				
+				
+				
 
 
 				reponse1 = new JButton();
@@ -167,8 +172,7 @@ public class SurvieGamePanel extends JPanel{
 
 
 	public void chargerInterfaceReponse(){
-//		questionNumero.setText("Question n°"+compteurQuestion);
-//		survieScore.setText("Score : "+jeu.getScore());
+		survieScore.setText("Score : "+jeu.getScore().getScore());
 		reponse1.setText(question.getProposition(1));
 		reponse2.setText(question.getProposition(2));
 		reponse3.setText(question.getProposition(3));
@@ -203,9 +207,26 @@ public class SurvieGamePanel extends JPanel{
 				boutonClique.setBackground(Color.GREEN);
 				boutonClique.setContentAreaFilled(false);
 				boutonClique.setOpaque(true);
-				System.out.println("vrai"+jeu.getScore());
+				if (boutonQuitter == null)
+				{
+					boutonQuitter  = new JButton();
+					boutonQuitter.setSize(new Dimension(150, 25));
+					boutonQuitter.setText("Quitter la partie");
+					boutonQuitter.setLocation(new Point(550,10));
+					boutonQuitter.addActionListener(new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent arg0) {
+							DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
+							DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
+							DutOManiaWindow.cont.validate();
+							DutOManiaWindow.cont.repaint();
+						}
+					});
+
+				}
 				boutonClique.revalidate();
-				survieScore.setText("Score : "+jeu.getScore());
+				survieScore.setText("Score : "+jeu.getScore().getScore());
 				survieScore.revalidate();
 			}
 			else{
@@ -217,7 +238,7 @@ public class SurvieGamePanel extends JPanel{
 				boutonClique.revalidate();			
 			}
 
-//			compteurQuestion++;
+
 		}
 
 	}
