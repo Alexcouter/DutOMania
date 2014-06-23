@@ -9,6 +9,8 @@ public class DutOManiaWindow extends JFrame {
 	public static SurvivalChoicePanel menuChoixSurvie = new SurvivalChoicePanel();
 	public static NormalGamePanel ecranJeuNormal = new NormalGamePanel();
 	public static SurvieGamePanel ecranJeuSurvie = new SurvieGamePanel();
+	public static EndNormalPanel ecrantFinJeuNormal = new EndNormalPanel();
+	public static EndSurviePanel ecrantFinJeuSurvie = new EndSurviePanel();
 	public static Container cont;
 	
 	public DutOManiaWindow(){

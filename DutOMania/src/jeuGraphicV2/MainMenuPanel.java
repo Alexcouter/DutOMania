@@ -16,6 +16,7 @@ public class MainMenuPanel extends JPanel {
 	
 	public MainMenuPanel() {
 		//Image de fond
+		
 		MainDut backGround = new MainDut();
 		backGround.setBounds(0, 0, 800, 600);
 		

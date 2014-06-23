@@ -23,7 +23,7 @@ public class SurvieGamePanel extends JPanel{
 	private JLabel survieScore = null;
 	private JLabel questionNumero = null;
 	private JButton boutonQuitter = null;
-//	private JLabel progression = null;
+	//	private JLabel progression = null;
 	private JLabel questionTexte = null;
 	private JButton reponse1 = null;
 	private JButton reponse2 = null;
@@ -32,144 +32,151 @@ public class SurvieGamePanel extends JPanel{
 	private Question question = jeu.chargerQuestion();
 	private JButton suivant;
 	private Color couleurDefautBouton;
-	
-	
+
+
 	public SurvieGamePanel(){
-		
+
 		//céation des éléments du panel
-				survieTexteTop = new JLabel("- Mode Survie -");
-				
-
-				survieTexteTop.setBounds(0, 0, 100, 40);
-
-				//		normalTexteTop.setLocation(new Point(10,0));
-				//		
-				//		questionTexte.setBounds(0, 0, 330, 40);
-				//		questionTexte.setLocation(new Point(230,320));
-
-				survieTexteTop.setLocation(new Point(10,0));
-
-				questionTexte = new JLabel("Question");
-				questionTexte.setBounds(0, 0, 330, 40);
-				questionTexte.setLocation(new Point(230,320));
+		survieTexteTop = new JLabel("- Mode Survie -");
 
 
+		survieTexteTop.setBounds(0, 0, 100, 40);
 
-				questionNumero = new JLabel();
-				questionNumero.setHorizontalAlignment(0);
-				questionNumero.setBounds(0, 0, 330, 40);
-				questionNumero.setLocation(new Point(230,300));
+		//		normalTexteTop.setLocation(new Point(10,0));
+		//		
+		//		questionTexte.setBounds(0, 0, 330, 40);
+		//		questionTexte.setLocation(new Point(230,320));
 
+		survieTexteTop.setLocation(new Point(10,0));
 
-				survieScore = new JLabel();
-				survieScore.setBounds(0, 0, 100, 40);
-				survieScore.setLocation(new Point(710,0));
-				
-				
-				vies = new JLabel();
-				vies.setBounds(0, 0, 100, 40);
-				vies.setLocation(new Point(200,0));
-				
-				
-				
-				
+		questionTexte = new JLabel("Question");
+		questionTexte.setBounds(0, 0, 330, 40);
+		questionTexte.setLocation(new Point(230,320));
 
 
-				reponse1 = new JButton();
-				reponse1.setSize(new Dimension(350, 50));
-				reponse1.addActionListener(new RepondreQuestion());
-				reponse1.setLocation(new Point(35,400));
 
-				reponse2 = new JButton();
-				reponse2.setSize(new Dimension(350, 50));
-				reponse2.addActionListener(new RepondreQuestion());
-				reponse2.setLocation(new Point(400,400));
-
-				reponse3 = new JButton();
-				reponse3.setSize(new Dimension(350, 50));
-				reponse3.addActionListener(new RepondreQuestion());
-				reponse3.setLocation(new Point(35,470));
+		questionNumero = new JLabel();
+		questionNumero.setHorizontalAlignment(0);
+		questionNumero.setBounds(0, 0, 330, 40);
+		questionNumero.setLocation(new Point(230,300));
 
 
-				reponse4 = new JButton();
-				reponse4.setSize(new Dimension(350, 50));
-				reponse4.addActionListener(new RepondreQuestion());
-				reponse4.setLocation(new Point(400,470));
+		survieScore = new JLabel();
+		survieScore.setBounds(0, 0, 100, 40);
+		survieScore.setLocation(new Point(710,0));
 
-				suivant = new JButton("Question suivante");
-				suivant.setSize(new Dimension(200, 25));
-				suivant.addActionListener(new ActionListener() {
 
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						jeu.enleverQuestionListe(question);
-						try {
-							question = jeu.chargerQuestion();
-							chargerInterfaceReponse();
-							resetBoutons();	
-						} catch (Exception e) {
-							System.out.println("Pas encore assez de question pour finir");
-						}
+		vies = new JLabel();
+		vies.setBounds(0, 0, 100, 40);
+		vies.setLocation(new Point(200,0));
 
 
 
 
-						repaint();
 
+
+		reponse1 = new JButton();
+		reponse1.setSize(new Dimension(350, 50));
+		reponse1.addActionListener(new RepondreQuestion());
+		reponse1.setLocation(new Point(35,400));
+
+		reponse2 = new JButton();
+		reponse2.setSize(new Dimension(350, 50));
+		reponse2.addActionListener(new RepondreQuestion());
+		reponse2.setLocation(new Point(400,400));
+
+		reponse3 = new JButton();
+		reponse3.setSize(new Dimension(350, 50));
+		reponse3.addActionListener(new RepondreQuestion());
+		reponse3.setLocation(new Point(35,470));
+
+
+		reponse4 = new JButton();
+		reponse4.setSize(new Dimension(350, 50));
+		reponse4.addActionListener(new RepondreQuestion());
+		reponse4.setLocation(new Point(400,470));
+
+		suivant = new JButton("Question suivante");
+		suivant.setSize(new Dimension(200, 25));
+		suivant.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				jeu.enleverQuestionListe(question);
+				if(jeu.nbVieRestante()<0){
+					DutOManiaWindow.ecrantFinJeuSurvie.setTexteFinal();
+					DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuSurvie);
+					DutOManiaWindow.cont.add(DutOManiaWindow.ecrantFinJeuSurvie);
+					DutOManiaWindow.cont.validate();
+					DutOManiaWindow.cont.repaint();
+				}else{
+					try {
+						question = jeu.chargerQuestion();
+						chargerInterfaceReponse();
+						resetBoutons();	
+					} catch (Exception e) {
+						System.out.println("Pas encore assez de question pour finir");
 					}
-				});
-				
-				suivant.setLocation(new Point(300,540));
-				suivant.setVisible(false);
-				
-				boutonQuitter  = new JButton();
-				boutonQuitter.setSize(new Dimension(150, 25));
-				boutonQuitter.setText("Quitter la partie");
-				boutonQuitter.setLocation(new Point(550,10));
-				boutonQuitter.addActionListener(new ActionListener() {
+				}
 
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuSurvie);
-						DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
-						DutOManiaWindow.cont.validate();
-						DutOManiaWindow.cont.repaint();
 
-					}
-				});
-				
-				//chargement de l'interface
-				Color couleurDefautBoutoncouleurDefautBouton = reponse1.getBackground();
-				
-				
-				// Creation du panel
-				setLayout(null);
-				
-				//ajout des composant dans le panel
-				add(survieTexteTop);
-				add(boutonQuitter);
-				add(survieScore);
-				add(questionNumero);
-				add(questionTexte);
-				add(reponse1);
-				add(reponse2);
-				add(reponse3);
-				add(reponse4);
-				add(suivant);
-				add(vies);
-				
-				
-				
-				chargerInterfaceReponse();
-		
+
+				repaint();
+
+			}
+		});
+
+		suivant.setLocation(new Point(300,540));
+		suivant.setVisible(false);
+
+		boutonQuitter  = new JButton();
+		boutonQuitter.setSize(new Dimension(150, 25));
+		boutonQuitter.setText("Quitter la partie");
+		boutonQuitter.setLocation(new Point(550,10));
+		boutonQuitter.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuSurvie);
+				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
+				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
+
+			}
+		});
+
+		//chargement de l'interface
+		Color couleurDefautBoutoncouleurDefautBouton = reponse1.getBackground();
+
+
+		// Creation du panel
+		setLayout(null);
+
+		//ajout des composant dans le panel
+		add(survieTexteTop);
+		add(boutonQuitter);
+		add(survieScore);
+		add(questionNumero);
+		add(questionTexte);
+		add(reponse1);
+		add(reponse2);
+		add(reponse3);
+		add(reponse4);
+		add(suivant);
+		add(vies);
+
+
+
+		chargerInterfaceReponse();
+
 	}
-	
+
 	public void resetBoutons(){
 		reponse1.setEnabled(true);
 		reponse2.setEnabled(true);
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
-		
+
 		reponse1.setBackground(couleurDefautBouton);
 		reponse2.setBackground(couleurDefautBouton);
 		reponse3.setBackground(couleurDefautBouton);
@@ -190,8 +197,8 @@ public class SurvieGamePanel extends JPanel{
 		questionTexte.setText(question.getIntituleQuestion());
 		System.out.println(jeu.getScore().getNbVies());
 	}
-	
-	
+
+
 	public class RepondreQuestion implements ActionListener {
 
 		@Override
@@ -257,8 +264,20 @@ public class SurvieGamePanel extends JPanel{
 
 	public void miseAJourVies() {
 		vies.setText("Vies : "+jeu.getScore().getNbVies());
-		
+
 	}
-	
-	
+
+	public JLabel getSurvieScore() {
+		return survieScore;
+	}
+
+	public void setSurvieScore(JLabel survieScore) {
+		this.survieScore = survieScore;
+	}
+
+	public JeuSurvie getJeu() {
+		return jeu;
+	}
+
+
 }
