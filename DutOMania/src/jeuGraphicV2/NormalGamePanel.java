@@ -181,6 +181,7 @@ public class NormalGamePanel extends JPanel {
 		add(suivant);
 		add(b42);
 		add(bMoitMoit);
+		add(barre);
 
 	}
 
