@@ -36,12 +36,8 @@ public class ListeQuestions {
 	public ListeQuestions() {
 		super();
 		listeQuestions = new ArrayList<Question>() ;
-		System.out.println(getNombreQuestionsXML());
 		for(int i = 0; i < getNombreQuestionsXML(); i++){
-			System.out.println(i+" tour de boucle contructeur");
-			ajouterQuestion(getQuestionXML(i));
-			System.out.println(listeQuestions.get(i).getIntituleQuestion());
-			
+			ajouterQuestion(getQuestionXML(i));			
 		}
 		
 	}
@@ -74,10 +70,7 @@ public class ListeQuestions {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		Question res = null;
-		System.out.println(id+" passé gans le getter");
-		if(id > getNombreQuestionsXML() || id == 0){
-			System.out.println("Erreur");
-		}
+		
 		try {
 			// Création d'un parseur
 			DocumentBuilder builder = factory.newDocumentBuilder();
