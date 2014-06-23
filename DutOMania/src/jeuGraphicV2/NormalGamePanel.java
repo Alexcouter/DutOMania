@@ -3,10 +3,15 @@ package jeuGraphicV2;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import jeuGraphic.panelMain;
@@ -38,9 +43,20 @@ public class NormalGamePanel extends JPanel {
 	private JButton suivant;
 	private Color couleurDefautBouton;
 	private BarreDeProgression barre = new BarreDeProgression();
+	  private Image bg;
 
 
 	public NormalGamePanel(){
+		
+	    try
+	    {
+	      this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/BgdeBase.jpg"));
+	    }
+	    catch (IOException e)
+	    {
+	      e.printStackTrace();
+	    }
+		
 
 		//céation des éléments du panel
 		normalTexteTop = new JLabel("- Mode Normal -");
@@ -171,6 +187,7 @@ public class NormalGamePanel extends JPanel {
 		setLayout(null);
 
 		//Ajout des éléments au panel
+
 		add(normalTexteTop);
 		add(boutonQuitter);
 		add(normalScore);
@@ -187,6 +204,11 @@ public class NormalGamePanel extends JPanel {
 		add(barre);
 
 	}
+	
+	  public void paintComponent(Graphics g)
+	  {
+		  g.drawImage(this.bg, 0, 0, 793, 572, this);
+	  }
 
 	public void resetBoutons(){
 		reponse1.setEnabled(true);
