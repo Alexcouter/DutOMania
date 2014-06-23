@@ -37,7 +37,7 @@ public class NormalGamePanel extends JPanel {
 	private int compteurQuestion = 1;
 	private JButton suivant;
 	private Color couleurDefautBouton;
-//	private BarreDeProgression barre = new BarreDeProgression();
+	private BarreDeProgression barre = new BarreDeProgression();
 
 
 	public NormalGamePanel(){
@@ -181,7 +181,8 @@ public class NormalGamePanel extends JPanel {
 		add(suivant);
 		add(b42);
 		add(bMoitMoit);
-//		add(barre);
+		barre.setBounds(180, 11, 300, 300);
+		add(barre);
 
 	}
 
