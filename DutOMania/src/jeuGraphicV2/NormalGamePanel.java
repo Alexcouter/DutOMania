@@ -253,13 +253,6 @@ public class NormalGamePanel extends JPanel {
 			compteurQuestion++;
 		}
 
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		barre.dessiner(g);
-		repaint();
-	}
-	
+	}	
 	
 }
