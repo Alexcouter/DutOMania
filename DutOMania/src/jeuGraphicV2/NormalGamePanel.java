@@ -243,13 +243,19 @@ public class NormalGamePanel extends JPanel {
 				boutonClique.revalidate();
 				normalScore.setText("Score : "+jeu.getScore().getScore());
 				normalScore.revalidate();
+				barre.bonneReponse(compteurQuestion-1);
+				barre.nouvelleQuestion(compteurQuestion);
+				barre.revalidate();
 			}
 			else{
 				boutonClique.setBackground(Color.RED);
 				boutonClique.setContentAreaFilled(false);
 				boutonClique.setOpaque(true);
 				System.out.println("faux");
-				boutonClique.revalidate();			
+				boutonClique.revalidate();	
+				barre.mauvaiseReponse(compteurQuestion-1);
+				barre.nouvelleQuestion(compteurQuestion);
+				barre.revalidate();
 			}
 
 			compteurQuestion++;
