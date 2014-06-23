@@ -33,6 +33,7 @@ public class SurvieGamePanel extends JPanel{
 	private JButton suivant;
 	private Color couleurDefautBouton;
 	
+	
 	public SurvieGamePanel(){
 		
 		//céation des éléments du panel
@@ -119,7 +120,7 @@ public class SurvieGamePanel extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuNormal);
+						DutOManiaWindow.cont.remove(DutOManiaWindow.ecranJeuSurvie);
 						DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 						DutOManiaWindow.cont.validate();
 						DutOManiaWindow.cont.repaint();
