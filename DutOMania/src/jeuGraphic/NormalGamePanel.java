@@ -71,7 +71,7 @@ public class NormalGamePanel extends JPanel {
 		questionTexte.setLocation(new Point(35,310));
 		questionTexte.setHorizontalAlignment(SwingConstants.CENTER);
 
-		b42 = new JButton();
+		b42 = new JButton("42");
 		b42.setSize(new Dimension(50, 25));
 		b42.setLocation(new Point(600, 300));
 		b42.addActionListener(new ActionListener() {
