@@ -111,9 +111,6 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-
-		barre.setBounds(180, 11, 300, 300);
-
 		questionNumero = new JLabel();
 		questionNumero.setHorizontalAlignment(0);
 		questionNumero.setBounds(0, 0, 330, 40);

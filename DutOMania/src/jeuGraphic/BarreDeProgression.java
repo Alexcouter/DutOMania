@@ -7,7 +7,7 @@ import javax.swing.JComponent;
 
 public class BarreDeProgression extends JComponent{
 	private Rectangle tabRectangles[];
-	private final int POSX_DEFAULT = 70;
+	private final int POSX_DEFAULT = 60;
 	private final int POSY_DEFAULT = 6;
 
 	public BarreDeProgression() {
