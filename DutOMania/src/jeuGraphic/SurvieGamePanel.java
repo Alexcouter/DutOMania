@@ -151,6 +151,7 @@ public class SurvieGamePanel extends JPanel{
 
 
 		// Creation du panel
+		resetBoutons();
 		setLayout(null);
 
 		//ajout des composant dans le panel
@@ -178,10 +179,10 @@ public class SurvieGamePanel extends JPanel{
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
 
-		reponse1.setBackground(couleurDefautBouton);
-		reponse2.setBackground(couleurDefautBouton);
-		reponse3.setBackground(couleurDefautBouton);
-		reponse4.setBackground(couleurDefautBouton);
+		reponse1.setBackground(Color.LIGHT_GRAY);
+		reponse2.setBackground(Color.LIGHT_GRAY);
+		reponse3.setBackground(Color.LIGHT_GRAY);
+		reponse4.setBackground(Color.LIGHT_GRAY);
 
 		suivant.setVisible(false);
 
