@@ -76,7 +76,7 @@ public class ListeQuestions {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 
 			// Création d'un objet de type Document contenant le fichier XML
-			Document document = builder.parse(new File("src/questions.xml"));
+			Document document = builder.parse(new File("questions.xml"));
 
 			// Récupération de l'élément racine du document pour pouvoir
 			// naviguer dedans
@@ -144,7 +144,7 @@ public class ListeQuestions {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 
 			// Création d'un objet de type Document contenant le fichier XML
-			Document document = builder.parse(new File("src/questions.xml"));
+			Document document = builder.parse(new File("questions.xml"));
 
 			// Récupération de l'élément racine du document pour pouvoir
 			// naviguer dedans
