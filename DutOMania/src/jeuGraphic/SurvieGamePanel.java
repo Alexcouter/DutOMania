@@ -2,10 +2,14 @@ package jeuGraphic;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,9 +37,22 @@ public class SurvieGamePanel extends JPanel{
 	private Question question = jeu.chargerQuestion();
 	private JButton suivant;
 	private Color couleurDefautBouton;
+	private Image bg;
+	private Image theme;
+	private String urltheme;
 
 
 	public SurvieGamePanel(){
+		
+		try
+		{
+			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/SurvieBg.jpg"));
+
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 
 		//céation des éléments du panel
 		survieTexteTop = new JLabel("- Mode Survie -");
@@ -199,6 +216,7 @@ public class SurvieGamePanel extends JPanel{
 		reponse3.setText(question.getProposition(3));
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
+		chargerImageTheme();
 		
 	}
 
@@ -283,5 +301,51 @@ public class SurvieGamePanel extends JPanel{
 		return jeu;
 	}
 
+	public void chargerImageTheme() {
+
+		switch(question.getTheme()){
+		case "Algorithmique et programmation":
+			urltheme = "JeuImages/ThemeProg.png";
+			break;
+		case "Outils et modèles du génie logiciel" :
+			urltheme = "JeuImages/ThemeOMGL.png";
+			break;
+		case "Architecture des systèmes et réseaux" :
+			urltheme = "JeuImages/ThemeReseau.png";
+			break;
+		case "Culture geek":
+			urltheme = "JeuImages/ThemeGeek.png";
+			break;
+		case "Anglais" :
+			urltheme = "JeuImages/ThemeAnglais.png";
+			break;
+		case "Mathématiques" :
+			urltheme = "JeuImages/ThemeMath.png";
+			break;
+		case "Projets" :
+			urltheme = "JeuImages/ThemeProjet.png";
+			break;
+		case "Base de données" :
+			urltheme = "JeuImages/ThemeBDD.png";
+			break;
+		case "Vie étudiante" :
+			urltheme = "JeuImages/ThemeVieEtu.png";
+			break;
+		case "Économie et gestion des organisations" :
+			urltheme = "JeuImages/ThemeEco.png";
+			break;
+		}
+		try {
+			theme = ImageIO.read(getClass().getClassLoader().getResource(urltheme));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(this.bg, 0, 0, 794, 572, this);
+		g.drawImage(this.theme, 0, 45, 794, 254, this);
+	}
 
 }
