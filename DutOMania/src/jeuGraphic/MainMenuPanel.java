@@ -42,6 +42,9 @@ public class MainMenuPanel extends JPanel {
 		boutonQuitter.setText("Quitter le jeu");
 		
 		//Création bouton gestionnaire
+//		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/iconeGestionnaire.jpg" )); 
+//		boutonGestionnaire = new JButton(icon);
+//		boutonGestionnaire.setIcon(new ImageIcon("/DutOMania/src/JeuImages/"));
 		boutonGestionnaire = new JButton("Gestionnaire de questions");
 		boutonGestionnaire.setSize(new Dimension(190, 20));
 		boutonGestionnaire.setLocation(new Point(590, 540));
