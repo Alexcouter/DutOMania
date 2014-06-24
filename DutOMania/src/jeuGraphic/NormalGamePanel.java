@@ -268,7 +268,7 @@ public class NormalGamePanel extends JPanel {
 			urltheme = "JeuImages/ThemeProjet.png";
 			break;
 		case "Base de données" :
-			urltheme = "JeuImages/ThemeBDD4.png";
+			urltheme = "JeuImages/ThemeBDD.png";
 			break;
 		case "Vie étudiante" :
 			urltheme = "JeuImages/ThemeVieEtu.png";
