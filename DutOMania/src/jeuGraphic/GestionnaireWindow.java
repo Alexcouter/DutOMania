@@ -1,6 +1,7 @@
 package jeuGraphic;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,6 +45,7 @@ public class GestionnaireWindow extends JFrame {
 		super("Gestionnaire de questions");
 		setSize(1500, 800);
 
+		setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		setLocationRelativeTo(null);
 		setResizable(true);
 		
@@ -77,8 +79,13 @@ public class GestionnaireWindow extends JFrame {
 		panelBoutons.setLayout(new FlowLayout());
 
 		boutonAjouter = new JButton("Ajouter une question");
+		boutonAjouter.setBackground(Color.LIGHT_GRAY);
+		
 		boutonEnregistrer = new JButton("Enregistrer");
+		boutonEnregistrer.setBackground(Color.LIGHT_GRAY);
+		
 		boutonSupprimer = new JButton("Supprimer");
+		boutonSupprimer.setBackground(Color.LIGHT_GRAY);
 		
 		boutonAjouter.addActionListener(new ActionListener() {
 			
