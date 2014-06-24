@@ -102,8 +102,9 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-
-
+//		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut3.jpg" ));
+		
+		
 		questionNumero = new JLabel();
 		questionNumero.setHorizontalAlignment(0);
 		questionNumero.setBounds(0, 0, 330, 40);
@@ -114,11 +115,12 @@ public class NormalGamePanel extends JPanel {
 		normalScore.setBounds(0, 0, 100, 40);
 		normalScore.setLocation(new Point(710,0));
 
-
+		
 		reponse1 = new JButton();
 		reponse1.setSize(new Dimension(350, 50));
 		reponse1.addActionListener(new RepondreQuestion());
 		reponse1.setLocation(new Point(35,400));
+		
 
 		reponse2 = new JButton();
 		reponse2.setSize(new Dimension(350, 50));
