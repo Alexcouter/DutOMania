@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import jeuGraphic.NormalGamePanel.RepondreQuestion;
 import JeuCode.JeuNormal;
@@ -50,8 +51,9 @@ public class SurvieGamePanel extends JPanel{
 		survieTexteTop.setLocation(new Point(10,0));
 
 		questionTexte = new JLabel("Question");
-		questionTexte.setBounds(0, 0, 330, 40);
-		questionTexte.setLocation(new Point(230,320));
+		questionTexte.setBounds(0, 0, 750, 60);
+		questionTexte.setLocation(new Point(35,310));
+		questionTexte.setHorizontalAlignment(SwingConstants.CENTER);
 
 
 
@@ -151,6 +153,7 @@ public class SurvieGamePanel extends JPanel{
 
 
 		// Creation du panel
+		resetBoutons();
 		setLayout(null);
 
 		//ajout des composant dans le panel
@@ -178,10 +181,10 @@ public class SurvieGamePanel extends JPanel{
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
 
-		reponse1.setBackground(couleurDefautBouton);
-		reponse2.setBackground(couleurDefautBouton);
-		reponse3.setBackground(couleurDefautBouton);
-		reponse4.setBackground(couleurDefautBouton);
+		reponse1.setBackground(Color.LIGHT_GRAY);
+		reponse2.setBackground(Color.LIGHT_GRAY);
+		reponse3.setBackground(Color.LIGHT_GRAY);
+		reponse4.setBackground(Color.LIGHT_GRAY);
 
 		suivant.setVisible(false);
 

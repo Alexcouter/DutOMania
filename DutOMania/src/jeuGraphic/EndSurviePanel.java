@@ -2,9 +2,13 @@ package jeuGraphic;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,8 +17,19 @@ public class EndSurviePanel extends JPanel{
 	private JLabel texteFinal;
 	private JLabel scoreFinal;
 	private JButton retour;
+	private Image bg;
 
 	public EndSurviePanel(){
+		
+		try
+		{
+			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/FindepartieSurvie.jpg"));
+
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 		
 		Font f = new Font("Trackmania", Font.PLAIN, 50);
 		texteFinal = new JLabel();
@@ -55,5 +70,10 @@ public class EndSurviePanel extends JPanel{
 		int scoreDuJeu = DutOManiaWindow.ecranJeuSurvie.getJeu().getScore().getScore();
 		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : ");
 		scoreFinal.setText("<html><center>"+scoreDuJeu+"</center></html>");
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(this.bg, 0, 0, 794, 572, this);
 	}
 }
