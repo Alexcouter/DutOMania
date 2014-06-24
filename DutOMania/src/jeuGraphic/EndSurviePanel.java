@@ -36,6 +36,7 @@ public class EndSurviePanel extends JPanel{
 		setLayout(null);
 
 		add(texteFinal);
+		
 		add(retour);
 
 		setVisible(true);
@@ -43,7 +44,8 @@ public class EndSurviePanel extends JPanel{
 
 	}
 	public void setTexteFinal(){
+		int scoreDuJeu = DutOManiaWindow.ecranJeuSurvie.getJeu().getScore().getScore();
 		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : <br><br>"
-				+ DutOManiaWindow.ecranJeuSurvie.getJeu().getScore().getScore() + "</center></html>");
+				+scoreDuJeu + "</center></html>");
 	}
 }
