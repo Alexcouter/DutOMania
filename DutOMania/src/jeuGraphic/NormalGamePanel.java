@@ -47,8 +47,8 @@ public class NormalGamePanel extends JPanel {
 	private String urltheme;
 
 	public NormalGamePanel(){
-		ImageIcon icon42 = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut2.jpg" ));
-		ImageIcon iconeMoitMoit = new ImageIcon(this.getClass().getResource(""));
+		ImageIcon icon42 = new ImageIcon(this.getClass().getResource("/JeuImages/Bouton42.jpg" ));
+		ImageIcon iconeMoitMoit = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonMoitmoit.jpg"));
 		ImageIcon iconeQuiter = new ImageIcon(this.getClass().getResource(""));
 
 
@@ -76,7 +76,7 @@ public class NormalGamePanel extends JPanel {
 		questionTexte.setLocation(new Point(35,310));
 		questionTexte.setHorizontalAlignment(SwingConstants.CENTER);
 
-		b42 = new JButton("42");
+		b42 = new JButton(icon42);
 		b42.setSize(new Dimension(50, 25));
 		b42.setLocation(new Point(600, 300));
 		b42.addActionListener(new ActionListener() {
@@ -96,7 +96,7 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-		bMoitMoit = new JButton("MoitMoit");
+		bMoitMoit = new JButton(iconeMoitMoit);
 		bMoitMoit.setSize(new Dimension(100, 25));
 		bMoitMoit.setLocation(new Point(660, 300));
 		bMoitMoit.addActionListener(new ActionListener() {
