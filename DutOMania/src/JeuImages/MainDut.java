@@ -9,12 +9,12 @@ import javax.swing.JPanel;
 
 public class MainDut extends JPanel{
 	  private Image bg;
-	  public MainDut()
+	  public MainDut(String urlImage)
 	  {
 		  setBounds(0, 0, 800, 600);
 	    try
 	    {
-	      this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/MainDut.jpg"));
+	      this.bg = ImageIO.read(getClass().getClassLoader().getResource(urlImage));
 	    }
 	    catch (IOException e)
 	    {

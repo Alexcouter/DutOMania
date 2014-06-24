@@ -19,6 +19,7 @@ import JeuCode.JeuNormal;
 import JeuCode.Joker;
 import JeuCode.ListeQuestions;
 import JeuCode.Question;
+import JeuImages.MainDut;
 
 public class NormalGamePanel extends JPanel {
 	private Joker moitMoit = new Joker("MoitMoit", true);
@@ -46,6 +47,9 @@ public class NormalGamePanel extends JPanel {
 	private String urltheme;
 
 	public NormalGamePanel(){
+		ImageIcon icon42 = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut2.jpg" ));
+		ImageIcon iconeMoitMoit = new ImageIcon(this.getClass().getResource(""));
+		ImageIcon iconeQuiter = new ImageIcon(this.getClass().getResource(""));
 
 
 		
@@ -58,13 +62,13 @@ public class NormalGamePanel extends JPanel {
 		{
 			e.printStackTrace();
 		}
+		
+		
 
 
 		//céation des éléments du panel
 		normalTexteTop = new JLabel("- Mode Normal -");
-
 		normalTexteTop.setBounds(0, 0, 100, 40);
-
 		normalTexteTop.setLocation(new Point(10,0));
 
 		questionTexte = new JLabel("Question");
@@ -106,8 +110,8 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-//		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut3.jpg" ));
 		
+		barre.setBounds(180, 11, 300, 300);
 		
 		questionNumero = new JLabel();
 		questionNumero.setHorizontalAlignment(0);
@@ -187,13 +191,14 @@ public class NormalGamePanel extends JPanel {
 					DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 					DutOManiaWindow.cont.validate();
 					DutOManiaWindow.cont.repaint();
+					DutOManiaWindow.ecranJeuNormal = new NormalGamePanel();
 				}
 			});
 
 		}
 
 		//set des l'interface question
-		couleurDefautBouton = reponse1.getBackground();
+		resetBoutons();
 		chargerInterfaceReponse();
 
 		// Creation du panel
@@ -213,7 +218,6 @@ public class NormalGamePanel extends JPanel {
 		add(suivant);
 		add(b42);
 		add(bMoitMoit);
-		barre.setBounds(180, 11, 300, 300);
 		add(barre);
 
 	}
@@ -230,10 +234,10 @@ public class NormalGamePanel extends JPanel {
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
 
-		reponse1.setBackground(couleurDefautBouton);
-		reponse2.setBackground(couleurDefautBouton);
-		reponse3.setBackground(couleurDefautBouton);
-		reponse4.setBackground(couleurDefautBouton);
+		reponse1.setBackground(Color.LIGHT_GRAY);
+		reponse2.setBackground(Color.LIGHT_GRAY);
+		reponse3.setBackground(Color.LIGHT_GRAY);
+		reponse4.setBackground(Color.LIGHT_GRAY);
 
 		suivant.setVisible(false);
 

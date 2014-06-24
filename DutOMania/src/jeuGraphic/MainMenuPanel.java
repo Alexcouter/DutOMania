@@ -20,7 +20,7 @@ public class MainMenuPanel extends JPanel {
 	public MainMenuPanel() {
 		//Image de fond
 		
-		MainDut backGround = new MainDut();
+		MainDut backGround = new MainDut("JeuImages/MainDut.jpg");
 		backGround.setBounds(0, 0, 800, 600);
 		
 		//Création bouton normal
