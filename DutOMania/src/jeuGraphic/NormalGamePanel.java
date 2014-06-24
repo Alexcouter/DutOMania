@@ -45,6 +45,9 @@ public class NormalGamePanel extends JPanel {
 
 
 	public NormalGamePanel(){
+		ImageIcon icon42 = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut2.jpg" ));
+		ImageIcon iconeMoitMoit = new ImageIcon(this.getClass().getResource(""));
+		ImageIcon iconeQuiter = new ImageIcon(this.getClass().getResource(""));
 
 		try
 		{
@@ -68,7 +71,7 @@ public class NormalGamePanel extends JPanel {
 		questionTexte.setLocation(new Point(35,310));
 		questionTexte.setHorizontalAlignment(SwingConstants.CENTER);
 
-		b42 = new JButton("42");
+		b42 = new JButton();
 		b42.setSize(new Dimension(50, 25));
 		b42.setLocation(new Point(600, 300));
 		b42.addActionListener(new ActionListener() {
@@ -102,8 +105,8 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-//		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/boutonDut3.jpg" ));
 		
+		barre.setBounds(180, 11, 300, 300);
 		
 		questionNumero = new JLabel();
 		questionNumero.setHorizontalAlignment(0);
@@ -188,7 +191,7 @@ public class NormalGamePanel extends JPanel {
 		}
 
 		//set des l'interface question
-		couleurDefautBouton = reponse1.getBackground();
+		resetBoutons();
 		chargerInterfaceReponse();
 
 		// Creation du panel
@@ -208,7 +211,6 @@ public class NormalGamePanel extends JPanel {
 		add(suivant);
 		add(b42);
 		add(bMoitMoit);
-		barre.setBounds(180, 11, 300, 300);
 		add(barre);
 
 	}
@@ -224,10 +226,10 @@ public class NormalGamePanel extends JPanel {
 		reponse3.setEnabled(true);
 		reponse4.setEnabled(true);
 
-		reponse1.setBackground(couleurDefautBouton);
-		reponse2.setBackground(couleurDefautBouton);
-		reponse3.setBackground(couleurDefautBouton);
-		reponse4.setBackground(couleurDefautBouton);
+		reponse1.setBackground(Color.LIGHT_GRAY);
+		reponse2.setBackground(Color.LIGHT_GRAY);
+		reponse3.setBackground(Color.LIGHT_GRAY);
+		reponse4.setBackground(Color.LIGHT_GRAY);
 
 		suivant.setVisible(false);
 
