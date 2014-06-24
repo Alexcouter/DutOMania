@@ -42,6 +42,7 @@ public class EndNormalPanel extends JLabel {
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.validate();
 				DutOManiaWindow.cont.repaint();
+				DutOManiaWindow.ecranJeuNormal = new NormalGamePanel();
 
 			}
 		});

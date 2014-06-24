@@ -29,6 +29,7 @@ public class EndSurviePanel extends JPanel{
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.validate();
 				DutOManiaWindow.cont.repaint();
+				DutOManiaWindow.ecranJeuSurvie = new SurvieGamePanel();
 
 			}
 		});

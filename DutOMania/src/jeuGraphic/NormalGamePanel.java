@@ -19,6 +19,7 @@ import JeuCode.JeuNormal;
 import JeuCode.Joker;
 import JeuCode.ListeQuestions;
 import JeuCode.Question;
+import JeuImages.MainDut;
 
 public class NormalGamePanel extends JPanel {
 	private Joker moitMoit = new Joker("MoitMoit", true);
@@ -57,13 +58,13 @@ public class NormalGamePanel extends JPanel {
 		{
 			e.printStackTrace();
 		}
+		
+		
 
 
 		//céation des éléments du panel
 		normalTexteTop = new JLabel("- Mode Normal -");
-
 		normalTexteTop.setBounds(0, 0, 100, 40);
-
 		normalTexteTop.setLocation(new Point(10,0));
 
 		questionTexte = new JLabel("Question");
@@ -185,6 +186,7 @@ public class NormalGamePanel extends JPanel {
 					DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 					DutOManiaWindow.cont.validate();
 					DutOManiaWindow.cont.repaint();
+					DutOManiaWindow.ecranJeuNormal = new NormalGamePanel();
 				}
 			});
 
