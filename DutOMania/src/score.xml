@@ -1,10 +1,7 @@
-<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <racine>
-	<joueur id="1">
-		<pseudo>...</pseudo>
-		<score>... ...</score>
-	</joueur>
+  <joueur id="1">
+    <pseudo>zsedgfhj</pseudo>
+    <score>0</score>
+  </joueur>
 </racine>
-	
-
-
