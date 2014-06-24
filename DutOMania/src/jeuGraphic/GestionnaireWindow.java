@@ -45,7 +45,7 @@ public class GestionnaireWindow extends JFrame {
 		setSize(1500, 800);
 
 		setLocationRelativeTo(null);
-		setResizable(false);
+		setResizable(true);
 		
 		questions = new ListeQuestions();
 		String[] nomsColonnes = {"Intitulé", "Proposition 1",
