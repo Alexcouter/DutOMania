@@ -22,6 +22,7 @@ public class MainMenuPanel extends JPanel {
 		ImageIcon iconeNormal = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonNormal.jpg" ));
 		ImageIcon iconeSurvie = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonSurvie.jpg"));
 		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitterMain.jpg"));
+		ImageIcon iconeGestionnaire = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonGestionnaire.jpg"));
 
 		MainDut backGround = new MainDut("JeuImages/MainDut.jpg");
 		backGround.setBounds(0, 0, 800, 600);
@@ -45,9 +46,9 @@ public class MainMenuPanel extends JPanel {
 //		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/iconeGestionnaire.jpg" )); 
 //		boutonGestionnaire = new JButton(icon);
 //		boutonGestionnaire.setIcon(new ImageIcon("/DutOMania/src/JeuImages/"));
-		boutonGestionnaire = new JButton("Gestionnaire de questions");
-		boutonGestionnaire.setSize(new Dimension(190, 20));
-		boutonGestionnaire.setLocation(new Point(590, 540));
+		boutonGestionnaire = new JButton(iconeGestionnaire);
+		boutonGestionnaire.setSize(new Dimension(116, 20));
+		boutonGestionnaire.setLocation(new Point(650, 540));
 		boutonGestionnaire.addActionListener(new ActionListener() {
 			
 			@Override
