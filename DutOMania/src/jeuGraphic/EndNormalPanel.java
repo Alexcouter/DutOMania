@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -14,14 +17,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import JeuCode.ScoreNormal;
+import JeuImages.MainDut;
 
 public class EndNormalPanel extends JLabel {
 	private JLabel texteFinal;
 	private JButton retour;
 	private JLabel commNote;
 	private JLabel scoreFinal;
+	private Image bg;
 
 	public EndNormalPanel() {
+		
+		try
+		{
+			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/Findepartie.jpg"));
+
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 		Font f = new Font("Trackmania", Font.PLAIN, 50);
 		
 		texteFinal = new JLabel();
@@ -78,6 +93,11 @@ public class EndNormalPanel extends JLabel {
 			commNote.setText("<html><center>Bien :) tu a eu ton DUT<br>Bien jouer :D</center></html>");
 		}
 		
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(this.bg, 0, 0, 794, 572, this);
 	}
 	
 
