@@ -83,14 +83,14 @@ public class NormalGamePanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				j42.joker42();
 				b42.setEnabled(false);
 				questionNumero.setText("Question n°"+compteurQuestion);
 				barre.bonneReponse(compteurQuestion-1);
 				barre.nouvelleQuestion(compteurQuestion);
 				compteurQuestion++;
-				barre.revalidate();
-				barre.repaint();
+				j42.joker42();
+				revalidate();
+				repaint();
 
 
 			}
