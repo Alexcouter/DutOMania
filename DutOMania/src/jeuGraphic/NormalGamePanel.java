@@ -13,6 +13,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 import JeuCode.Jeu;
 import JeuCode.JeuNormal;
@@ -49,10 +50,10 @@ public class NormalGamePanel extends JPanel {
 	public NormalGamePanel(){
 		ImageIcon icon42 = new ImageIcon(this.getClass().getResource("/JeuImages/Bouton42.jpg" ));
 		ImageIcon iconeMoitMoit = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonMoitmoit.jpg"));
-		ImageIcon iconeQuiter = new ImageIcon(this.getClass().getResource(""));
+		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitter.jpg"));
 
 
-		
+
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/BgdeBase.jpg"));
@@ -62,8 +63,8 @@ public class NormalGamePanel extends JPanel {
 		{
 			e.printStackTrace();
 		}
-		
-		
+
+
 
 
 		//céation des éléments du panel
@@ -110,9 +111,9 @@ public class NormalGamePanel extends JPanel {
 			}
 		});
 
-		
+
 		barre.setBounds(180, 11, 300, 300);
-		
+
 		questionNumero = new JLabel();
 		questionNumero.setHorizontalAlignment(0);
 		questionNumero.setBounds(0, 0, 330, 40);
@@ -123,12 +124,12 @@ public class NormalGamePanel extends JPanel {
 		normalScore.setBounds(0, 0, 100, 40);
 		normalScore.setLocation(new Point(710,0));
 
-		
+
 		reponse1 = new JButton();
 		reponse1.setSize(new Dimension(350, 50));
 		reponse1.addActionListener(new RepondreQuestion());
 		reponse1.setLocation(new Point(35,400));
-		
+
 
 		reponse2 = new JButton();
 		reponse2.setSize(new Dimension(350, 50));
@@ -154,7 +155,7 @@ public class NormalGamePanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				jeu.enleverQuestionListe(question);
 				if( compteurQuestion < 20){
-					
+
 					try {
 						question = jeu.chargerQuestion();
 						chargerInterfaceReponse();
@@ -168,7 +169,7 @@ public class NormalGamePanel extends JPanel {
 					DutOManiaWindow.cont.add(DutOManiaWindow.ecrantFinJeuNormal);
 					DutOManiaWindow.cont.validate();
 					DutOManiaWindow.cont.repaint();
-					
+
 				}
 				repaint(); 
 
@@ -179,9 +180,8 @@ public class NormalGamePanel extends JPanel {
 
 		if (boutonQuitter == null)
 		{
-			boutonQuitter  = new JButton();
+			boutonQuitter  = new JButton(iconeQuitter);
 			boutonQuitter.setSize(new Dimension(150, 25));
-			boutonQuitter.setText("Quitter la partie");
 			boutonQuitter.setLocation(new Point(550,10));
 			boutonQuitter.addActionListener(new ActionListener() {
 
@@ -244,7 +244,7 @@ public class NormalGamePanel extends JPanel {
 	}
 
 	public void chargerImageTheme() {
-		
+
 		switch(question.getTheme()){
 		case "Algorithmique et programmation":
 			urltheme = "JeuImages/ThemeProg.png";
@@ -286,9 +286,9 @@ public class NormalGamePanel extends JPanel {
 	}
 
 	public void chargerInterfaceReponse(){
-		
-		
-		
+
+
+
 		questionNumero.setText("Question n°"+compteurQuestion);
 		questionNumero.setForeground(Color.WHITE);
 		questionNumero.setBounds(35,290, 750, 60);
