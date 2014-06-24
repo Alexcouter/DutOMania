@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -43,7 +44,8 @@ public class SurvieGamePanel extends JPanel{
 
 
 	public SurvieGamePanel(){
-		
+		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitter.jpg"));
+
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/SurvieBg.jpg"));
@@ -148,9 +150,8 @@ public class SurvieGamePanel extends JPanel{
 		suivant.setLocation(new Point(300,540));
 		suivant.setVisible(false);
 
-		boutonQuitter  = new JButton();
+		boutonQuitter  = new JButton(iconeQuitter);
 		boutonQuitter.setSize(new Dimension(150, 25));
-		boutonQuitter.setText("Quitter la partie");
 		boutonQuitter.setLocation(new Point(550,10));
 		boutonQuitter.addActionListener(new ActionListener() {
 
@@ -209,6 +210,7 @@ public class SurvieGamePanel extends JPanel{
 
 
 	public void chargerInterfaceReponse(){
+		
 		survieScore.setText("Score : "+jeu.getScore().getScore());
 		vies.setText("Vies : "+jeu.getScore().getNbVies());
 		reponse1.setText(question.getProposition(1));
@@ -216,6 +218,7 @@ public class SurvieGamePanel extends JPanel{
 		reponse3.setText(question.getProposition(3));
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
+		questionTexte.setForeground(Color.WHITE);
 		chargerImageTheme();
 		
 	}
