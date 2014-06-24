@@ -42,13 +42,17 @@ public class NormalGamePanel extends JPanel {
 	private Color couleurDefautBouton;
 	private BarreDeProgression barre = new BarreDeProgression();
 	private Image bg;
-
+	private Image theme;
+	private String urltheme;
 
 	public NormalGamePanel(){
 
+
+		
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/BgdeBase.jpg"));
+
 		}
 		catch (IOException e)
 		{
@@ -146,6 +150,7 @@ public class NormalGamePanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				jeu.enleverQuestionListe(question);
 				if( compteurQuestion < 20){
+					
 					try {
 						question = jeu.chargerQuestion();
 						chargerInterfaceReponse();
@@ -216,6 +221,7 @@ public class NormalGamePanel extends JPanel {
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(this.bg, 0, 0, 794, 572, this);
+		g.drawImage(this.theme, 0, 45, 794, 254, this);
 	}
 
 	public void resetBoutons(){
@@ -233,8 +239,52 @@ public class NormalGamePanel extends JPanel {
 
 	}
 
+	public void chargerImageTheme() {
+		
+		switch(question.getTheme()){
+		case "Algorithmique et programmation":
+			urltheme = "JeuImages/ThemeProg.png";
+			break;
+		case "Outils et modèles du génie logiciel" :
+			urltheme = "JeuImages/ThemeOMGL.png";
+			break;
+		case "Architecture des systèmes et réseaux" :
+			urltheme = "JeuImages/ThemeReseau.png";
+			break;
+		case "Culture geek":
+			urltheme = "JeuImages/ThemeGeek.png";
+			break;
+		case "Anglais" :
+			urltheme = "JeuImages/ThemeAnglais.png";
+			break;
+		case "Mathématiques" :
+			urltheme = "JeuImages/ThemeMath.png";
+			break;
+		case "Projets" :
+			urltheme = "JeuImages/ThemeProjet.png";
+			break;
+		case "Base de données" :
+			urltheme = "JeuImages/ThemeBDD4.png";
+			break;
+		case "Vie étudiante" :
+			urltheme = "JeuImages/ThemeVieEtu.png";
+			break;
+		case "Économie et gestion des organisations" :
+			urltheme = "JeuImages/ThemeEco.png";
+			break;
+		}
+		try {
+			theme = ImageIO.read(getClass().getClassLoader().getResource(urltheme));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void chargerInterfaceReponse(){
+		
+		
+		
 		questionNumero.setText("Question n°"+compteurQuestion);
 		questionNumero.setForeground(Color.WHITE);
 		questionNumero.setBounds(35,290, 750, 60);
@@ -246,6 +296,7 @@ public class NormalGamePanel extends JPanel {
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
 		questionTexte.setForeground(Color.WHITE);
+		chargerImageTheme();
 	}
 
 	//Listener des boutons de réponse
