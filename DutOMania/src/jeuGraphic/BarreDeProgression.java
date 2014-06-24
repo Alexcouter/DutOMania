@@ -28,10 +28,12 @@ public class BarreDeProgression extends JComponent{
 	
 	public void bonneReponse(int id) {
 		tabRectangles[id].setColor(Color.GREEN);
+		repaint();
 	}
 
 	public void mauvaiseReponse(int id) {
 		tabRectangles[id].setColor(Color.RED);
+		repaint();
 	}
 	
 	public void nouvelleQuestion(int id){

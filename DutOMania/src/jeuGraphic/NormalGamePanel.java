@@ -152,12 +152,12 @@ public class NormalGamePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jeu.enleverQuestionListe(question);
-				if( compteurQuestion < 20){
-
+				if( compteurQuestion <= 20){
+					barre.nouvelleQuestion(compteurQuestion-1);
 					try {
 						question = jeu.chargerQuestion();
 						chargerInterfaceReponse();
-						resetBoutons();	
+						resetBoutons();
 					} catch (Exception e) {
 						System.out.println("Pas encore assez de question pour finir");
 					}
@@ -333,7 +333,6 @@ public class NormalGamePanel extends JPanel {
 				normalScore.setText("Score : "+jeu.getScore().getScore());
 				normalScore.revalidate();
 				barre.bonneReponse(compteurQuestion-1);
-				barre.nouvelleQuestion(compteurQuestion);
 				barre.revalidate();
 			}
 			else{
@@ -343,7 +342,6 @@ public class NormalGamePanel extends JPanel {
 				System.out.println("faux");
 				boutonClique.revalidate();	
 				barre.mauvaiseReponse(compteurQuestion-1);
-				barre.nouvelleQuestion(compteurQuestion);
 				barre.revalidate();
 			}
 
