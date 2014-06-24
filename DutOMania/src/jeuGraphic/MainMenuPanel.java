@@ -18,28 +18,28 @@ public class MainMenuPanel extends JPanel {
 	private JButton boutonGestionnaire;
 	
 	public MainMenuPanel() {
-		//Image de fond
-		
+		//Images
+		ImageIcon iconeNormal = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonNormal.jpg" ));
+		ImageIcon iconeSurvie = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonSurvie.jpg"));
+		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitterMain.jpg"));
+
 		MainDut backGround = new MainDut("JeuImages/MainDut.jpg");
 		backGround.setBounds(0, 0, 800, 600);
 		
 		//Création bouton normal
-		boutonNormal = new JButton();
+		boutonNormal = new JButton(iconeNormal);
 		boutonNormal.setSize(new Dimension(320, 60));
-		boutonNormal.setText("Normal");
 		boutonNormal.setLocation(new Point(240,300));
 		
 		//Création bouton survie
-		boutonSurvie = new JButton();
+		boutonSurvie = new JButton(iconeSurvie);
 		boutonSurvie.setSize(new Dimension(320, 60));
 		boutonSurvie.setLocation(new Point(240,400));
-		boutonSurvie.setText("Survie");
-		
+
 		//Création bouton quitter
-		boutonQuitter = new JButton();
+		boutonQuitter = new JButton(iconeQuitter);
 		boutonQuitter.setSize(new Dimension(320, 60));
 		boutonQuitter.setLocation(new Point(240,500));
-		boutonQuitter.setText("Quitter le jeu");
 		
 		//Création bouton gestionnaire
 //		ImageIcon icon = new ImageIcon(this.getClass().getResource("/JeuImages/iconeGestionnaire.jpg" )); 
