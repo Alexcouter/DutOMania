@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<racine>
+  <question id="1" theme="Algorithmique et programmation">
+    <intitule>Que signifie HTML ?</intitule>
+    <proposition>L'Hypertext Markup Language</proposition>
+    <proposition>L'Hypertext Market Language</proposition>
+    <proposition>HyperTipe Maker Ligne</proposition>
+    <proposition>L'HyperText Man Lan</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="2" theme="Outils et modèles du génie logiciel">
+    <intitule>Que signifie UML ?</intitule>
+    <proposition>United Multimédia Language</proposition>
+    <proposition>Ultra Man Laser</proposition>
+    <proposition>Unified Modeling Language</proposition>
+    <proposition>Unit Modern Limit</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="3" theme="Algorithmique et programmation">
+    <intitule>D'ou viens le nom Eclipse ?</intitule>
+    <proposition>Nom du Koala, mascotte de l'équipe de Test</proposition>
+    <proposition>Suite à un aveuglement de l'équipe par une éclipse </proposition>
+    <proposition>Troll de dévellopeur concurrent</proposition>
+    <proposition>Aucun idée, ces noms sortent de nul-part</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="4" theme="Algorithmique et programmation">
+    <intitule>Quel entreprise a developpe le language Java ?</intitule>
+    <proposition>Cisco</proposition>
+    <proposition>Apple</proposition>
+    <proposition>Microsoft</proposition>
+    <proposition>Sun Microsystem</proposition>
+    <reponse>4</reponse>
+  </question>
+  <question id="5" theme="Algorithmique et programmation">
+    <intitule>A quoi sert un pointeur en C ?</intitule>
+    <proposition>Vaseline forever</proposition>
+    <proposition>L'Hypertext Market Language</proposition>
+    <proposition>Contenir l'adresse d'une autre variable d'un type donné.</proposition>
+    <proposition>Sert à contenir une pointe</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="6" theme="Outils et modèles du génie logiciel">
+    <intitule>Parmis ces diagrammes lequel est un diagramme UML</intitule>
+    <proposition>Diagramme de Gantt</proposition>
+    <proposition>Diagramme de PERT</proposition>
+    <proposition>Diagramme de séquence</proposition>
+    <proposition>Diagramme de bode</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="7" theme="Vie étudiante">
+    <intitule>Combien de dos d'âne passe t-on pour rentrer dans le parking ?</intitule>
+    <proposition>Deux</proposition>
+    <proposition>trop</proposition>
+    <proposition>violent</proposition>
+    <proposition>Un</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="8" theme="Vie étudiante">
+    <intitule>Quel âge a le bâtiment informatique ?</intitule>
+    <proposition>2</proposition>
+    <proposition>3</proposition>
+    <proposition>1</proposition>
+    <proposition>5</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="9" theme="Architecture des systèmes et réseaux">
+    <intitule>Que signifie IPV4 ?</intitule>
+    <proposition>Internet Protocol Version 4</proposition>
+    <proposition>International Parameter Version 4</proposition>
+    <proposition>Internet Protocol Vision 4</proposition>
+    <proposition>Internet Portail Version 4</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="10" theme="Architecture des systèmes et réseaux">
+    <intitule>Quelle est la deuxième couche du modèle OSI ?</intitule>
+    <proposition>Présentation</proposition>
+    <proposition>Session</proposition>
+    <proposition>Transport</proposition>
+    <proposition>Liaison</proposition>
+    <reponse>4</reponse>
+  </question>
+  <question id="11" theme="Architecture des systèmes et réseaux">
+    <intitule>Quelle est la taille d'une adresse IPV6 ?</intitule>
+    <proposition>18 Octets</proposition>
+    <proposition>128bits</proposition>
+    <proposition>32 Bits</proposition>
+    <proposition>6 Octets</proposition>
+    <reponse>2</reponse>
+  </question>
+  <question id="12" theme="Outils et modèles du génie logiciel">
+    <intitule>Que permet de faire la commande Grant en Base de donnée ?</intitule>
+    <proposition>Supprime les accès à la base de données</proposition>
+    <proposition>Autorise un accès partiel à la base</proposition>
+    <proposition>Autorise un accès totale à la base</proposition>
+    <proposition>Autorise un accès totale ou partiel à la base</proposition>
+    <reponse>4</reponse>
+  </question>
+  <question id="13" theme="Vie étudiante">
+    <intitule>Quelle est le prix que vous allez dépenser, tout les jours, au RU pour un repas basique ?</intitule>
+    <proposition>€ 4.20</proposition>
+    <proposition>€ 6.30</proposition>
+    <proposition>€ 3.15</proposition>
+    <proposition>tr0p</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="14" theme="Culture geek">
+    <intitule>Chewbacca fait partie de l'espèce des : </intitule>
+    <proposition>Ewoks</proposition>
+    <proposition>Siths</proposition>
+    <proposition>Wookies</proposition>
+    <proposition>Mandaloriens</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="15" theme="Culture geek">
+    <intitule>Qui est le père de Linux ?</intitule>
+    <proposition>Steve Jobs</proposition>
+    <proposition>Linus Torvalds</proposition>
+    <proposition>Bruno Ernet</proposition>
+    <proposition>Bill Gates</proposition>
+    <reponse>2</reponse>
+  </question>
+  <question id="16" theme="Culture geek">
+    <intitule>Quel est le nom de l'ordinateur dans 2001, l'Odyssée de l'Espace ?</intitule>
+    <proposition>HAL 9000</proposition>
+    <proposition>R2-D2</proposition>
+    <proposition>C3-PO</proposition>
+    <proposition>Marvin</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="17" theme="Culture geek">
+    <intitule>Dans laquelle des villes suivantes aucun Grand Theft Auto n'a jamais pris place ?</intitule>
+    <proposition>San Andreas</proposition>
+    <proposition>Liberty City</proposition>
+    <proposition>Vice City</proposition>
+    <proposition>Sin City</proposition>
+    <reponse>4</reponse>
+  </question>
+  <question id="18" theme="Anglais">
+    <intitule>Que veut dire IT ?</intitule>
+    <proposition>Internet Technology</proposition>
+    <proposition>Internal Technician</proposition>
+    <proposition>Information Technology</proposition>
+    <proposition>In Terim</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="19" theme="Économie et gestion des organisations">
+    <intitule>Quelle est le document de synthèse qui permet de voir le patrimoine d'un entreprise ?</intitule>
+    <proposition>Le Bilan</proposition>
+    <proposition>Le Compte de résultat</proposition>
+    <proposition>Diagramme de PERT</proposition>
+    <proposition>Le SWOT</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="20" theme="Mathématiques">
+    <intitule>Comment la théorie des graphes a été créée ?</intitule>
+    <proposition>Main Divine</proposition>
+    <proposition>En  traversant des ponts</proposition>
+    <proposition>En réfléchissant</proposition>
+    <proposition>Science infuse</proposition>
+    <reponse>2</reponse>
+  </question>
+  <question id="21" theme="Algorithmique et programmation">
+    <intitule>Quelle est l'instruction Java, parmis ces propositions, qui permet d'afficher du texte ?</intitule>
+    <proposition>printf();</proposition>
+    <proposition>echo</proposition>
+    <proposition>return();</proposition>
+    <proposition>System.out.println();</proposition>
+    <reponse>4</reponse>
+  </question>
+  <question id="22" theme="Projets">
+    <intitule>Avec quel outil peut-on gérer facilement un planning ?</intitule>
+    <proposition>Diagramme de GANTT</proposition>
+    <proposition>Cahier de textes</proposition>
+    <proposition>Diagramme de PERT</proposition>
+    <proposition>Google Agenda</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="23" theme="Vie étudiante">
+    <intitule>Quel est le nom du service de transport urbain de la ville de Laval ?</intitule>
+    <proposition>SETRAM</proposition>
+    <proposition>TUL</proposition>
+    <proposition>STAR</proposition>
+    <proposition>RATP</proposition>
+    <reponse>2</reponse>
+  </question>
+  <question id="24" theme="Base de données">
+    <intitule>Quel est la commande qui permet de modifier une table en SQL ?</intitule>
+    <proposition>Modify</proposition>
+    <proposition>Change</proposition>
+    <proposition>Update</proposition>
+    <proposition>Drop</proposition>
+    <reponse>3</reponse>
+  </question>
+  <question id="25" theme="Base de données">
+    <intitule>Quelle est l'instruction SQL permettant de créer un contrainte ?</intitule>
+    <proposition>Constraint</proposition>
+    <proposition>Restraint</proposition>
+    <proposition>Repression</proposition>
+    <proposition>Impel</proposition>
+    <reponse>1</reponse>
+  </question>
+  <question id="26" theme="Base de données">
+    <intitule>aaaa</intitule>
+    <proposition>rtrtr</proposition>
+    <proposition>rtrtrt</proposition>
+    <proposition>rtrtrtr</proposition>
+    <proposition>rtrtrtrt</proposition>
+    <reponse>1</reponse>
+  </question>
+</racine>
