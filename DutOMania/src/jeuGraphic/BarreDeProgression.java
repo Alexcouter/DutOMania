@@ -7,8 +7,8 @@ import javax.swing.JComponent;
 
 public class BarreDeProgression extends JComponent{
 	private Rectangle tabRectangles[];
-	private final int POSX_DEFAULT = 0;
-	private final int POSY_DEFAULT = 0;
+	private final int POSX_DEFAULT = 70;
+	private final int POSY_DEFAULT = 6;
 
 	public BarreDeProgression() {
 		tabRectangles = new Rectangle[20];
@@ -19,7 +19,9 @@ public class BarreDeProgression extends JComponent{
 			tabRectangles[i].setX(POSX_DEFAULT + decalX);
 			tabRectangles[i].setY(POSY_DEFAULT);
 			decalX = decalX + tabRectangles[i].getLON_DEFAULT();
+			
 		}
+		setBounds(POSX_DEFAULT, POSY_DEFAULT, 500, 300);
 		this.nouvelleQuestion(0);
 		
 	}
@@ -33,7 +35,8 @@ public class BarreDeProgression extends JComponent{
 	}
 	
 	public void nouvelleQuestion(int id){
-		tabRectangles[id].setColor(Color.GRAY);
+		if(id < 20)
+			tabRectangles[id].setColor(Color.GRAY);
 	}
 	
 	public void dessiner(Graphics g){
