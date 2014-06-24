@@ -87,10 +87,10 @@ public class EndNormalPanel extends JLabel {
 		if(scoreDuJeu < 10){
 			commNote.setText("<html><center>C'était presque pas trop mal<br>mais rejoue encore !!</center></html>");
 		}else if(scoreDuJeu >= 10 && scoreDuJeu < 15){
-			commNote.setText("<html><center>Ouai pas mal :)<br>mais encore a perfectionner !</center></html>");
+			commNote.setText("<html><center>Ouai pas mal<br>mais encore a perfectionner !</center></html>");
 		}
 		else{
-			commNote.setText("<html><center>Bien :) tu a eu ton DUT<br>Bien jouer :D</center></html>");
+			commNote.setText("<html><center>Bien tu a eu ton DUT<br>Bien jouer !!</center></html>");
 		}
 		
 	}
