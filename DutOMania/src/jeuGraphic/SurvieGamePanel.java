@@ -147,7 +147,7 @@ public class SurvieGamePanel extends JPanel{
 		});
 
 		//chargement de l'interface
-		Color couleurDefautBoutoncouleurDefautBouton = reponse1.getBackground();
+		
 
 
 		// Creation du panel
@@ -196,7 +196,7 @@ public class SurvieGamePanel extends JPanel{
 		reponse3.setText(question.getProposition(3));
 		reponse4.setText(question.getProposition(4));
 		questionTexte.setText(question.getIntituleQuestion());
-		System.out.println(jeu.getScore().getNbVies());
+		
 	}
 
 

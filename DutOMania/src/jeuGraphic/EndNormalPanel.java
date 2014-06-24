@@ -1,5 +1,6 @@
 package jeuGraphic;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -18,14 +19,20 @@ public class EndNormalPanel extends JLabel {
 	private JLabel texteFinal;
 	private JButton retour;
 	private JLabel commNote;
+	private JLabel scoreFinal;
 
 	public EndNormalPanel() {
-
-		texteFinal = new JLabel();
-		
-		texteFinal.setBounds(175, -100, 800, 600);
 		Font f = new Font("Trackmania", Font.PLAIN, 50);
+		
+		texteFinal = new JLabel();
+		texteFinal.setBounds(175, -150, 800, 600);
 		texteFinal.setFont(f);
+		
+		
+		scoreFinal = new JLabel();
+		scoreFinal.setBounds(350, -25 , 200, 600);
+		scoreFinal.setFont(f);
+		scoreFinal.setForeground(Color.white);
 		
 		commNote = new JLabel();
 		commNote.setBounds(100, 300, 800, 200);
@@ -52,14 +59,15 @@ public class EndNormalPanel extends JLabel {
 		add(texteFinal);
 		add(commNote);
 		add(retour);
+		add(scoreFinal);
 
 		setVisible(true);
 
 	}
 	public void setTexteFinal(){
 		int scoreDuJeu = DutOManiaWindow.ecranJeuNormal.getJeu().getScore().getScore();
-		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : <br><br>"
-				+ scoreDuJeu + "/20</center></html>");
+		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : </center></html>");
+		scoreFinal.setText("<html><center>"+scoreDuJeu+"/20</center></html>");
 		
 		if(scoreDuJeu < 10){
 			commNote.setText("<html><center>C'était presque pas trop mal<br>mais rejoue encore !!</center></html>");

@@ -1,5 +1,6 @@
 package jeuGraphic;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,14 +11,20 @@ import javax.swing.JPanel;
 
 public class EndSurviePanel extends JPanel{
 	private JLabel texteFinal;
+	private JLabel scoreFinal;
 	private JButton retour;
 
 	public EndSurviePanel(){
-
-		texteFinal = new JLabel();
-		texteFinal.setBounds(175, -100, 800, 600);
+		
 		Font f = new Font("Trackmania", Font.PLAIN, 50);
+		texteFinal = new JLabel();
+		texteFinal.setBounds(175, -125, 800, 600);
 		texteFinal.setFont(f);
+		
+		scoreFinal = new JLabel();
+		scoreFinal.setBounds(375, 25 , 250, 600);
+		scoreFinal.setFont(f);
+		scoreFinal.setForeground(Color.white);
 
 
 		retour = new JButton("Menu Principal");
@@ -37,7 +44,7 @@ public class EndSurviePanel extends JPanel{
 		setLayout(null);
 
 		add(texteFinal);
-		
+		add(scoreFinal);
 		add(retour);
 
 		setVisible(true);
@@ -46,7 +53,7 @@ public class EndSurviePanel extends JPanel{
 	}
 	public void setTexteFinal(){
 		int scoreDuJeu = DutOManiaWindow.ecranJeuSurvie.getJeu().getScore().getScore();
-		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : <br><br>"
-				+scoreDuJeu + "</center></html>");
+		texteFinal.setText("<html><center>Fin de la partie<br>Votre score est de : ");
+		scoreFinal.setText("<html><center>"+scoreDuJeu+"</center></html>");
 	}
 }

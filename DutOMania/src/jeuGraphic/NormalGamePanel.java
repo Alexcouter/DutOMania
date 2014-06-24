@@ -122,6 +122,7 @@ public class NormalGamePanel extends JPanel {
 		normalScore = new JLabel();
 		normalScore.setBounds(0, 0, 100, 40);
 		normalScore.setLocation(new Point(710,0));
+		
 
 		
 		reponse1 = new JButton();
