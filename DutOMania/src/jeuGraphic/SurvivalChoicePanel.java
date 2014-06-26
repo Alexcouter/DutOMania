@@ -22,6 +22,10 @@ public class SurvivalChoicePanel extends JPanel {
 	private Image bg;
 	
 	public SurvivalChoicePanel(){
+		ImageIcon iconeNormal = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonChoixNormal.jpg" ));
+		ImageIcon iconeFacile = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonChoixFacile.jpg"));
+		ImageIcon iconeDifficile = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonChoixDifficile.jpg"));
+		ImageIcon iconeRetour = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonRetour.jpg"));
 		
 		try
 		{
@@ -49,24 +53,20 @@ public class SurvivalChoicePanel extends JPanel {
 		survieChoixTxt.setLocation(new Point(240,100));
 		
 		//Création des boutons
-		boutonFacile = new JButton();
+		boutonFacile = new JButton(iconeFacile);
 		boutonFacile.setSize(new Dimension(320, 60));
-		boutonFacile.setText("Facile");
 		boutonFacile.setLocation(new Point(240,200));
 		
-		boutonNormal = new JButton();
+		boutonNormal = new JButton(iconeNormal);
 		boutonNormal.setSize(new Dimension(320, 60));
-		boutonNormal.setText("Normale");
 		boutonNormal.setLocation(new Point(240,300));
 		
-		boutonDifficile = new JButton();
+		boutonDifficile = new JButton(iconeDifficile);
 		boutonDifficile.setSize(new Dimension(320, 60));
-		boutonDifficile.setText("Difficile");
 		boutonDifficile.setLocation(new Point(240,400));
 		
-		boutonRetour = new JButton();
+		boutonRetour = new JButton(iconeRetour);
 		boutonRetour.setSize(new Dimension(100, 40));
-		boutonRetour.setText("Retour");
 		boutonRetour.setLocation(new Point(50,500));
 		
 		//Ajout des listener au boutons
