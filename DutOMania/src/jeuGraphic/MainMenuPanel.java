@@ -1,5 +1,6 @@
 package jeuGraphic;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class MainMenuPanel extends JPanel {
 	private JButton boutonQuitter = null;
 	private JButton boutonGestionnaire;
 	private JButton bAideNormal;
+	private JButton bAideSurvie;
 	
 	public MainMenuPanel() {
 		//Images
@@ -33,6 +35,12 @@ public class MainMenuPanel extends JPanel {
 		bAideNormal = new JButton(iconAide);
 		bAideNormal.setSize(new Dimension(30, 30));
 		bAideNormal.setLocation(new Point(580, 315));
+		bAideNormal.setBackground(Color.LIGHT_GRAY);
+		
+		bAideSurvie = new JButton(iconAide);
+		bAideSurvie.setSize(new Dimension(30, 30));
+		bAideSurvie.setLocation(new Point(580, 415));
+		bAideSurvie.setBackground(Color.LIGHT_GRAY);
 		
 		//Création bouton normal
 		boutonNormal = new JButton(iconeNormal);
@@ -55,7 +63,7 @@ public class MainMenuPanel extends JPanel {
 //		boutonGestionnaire.setIcon(new ImageIcon("/DutOMania/src/JeuImages/"));
 		boutonGestionnaire = new JButton(iconeGestionnaire);
 		boutonGestionnaire.setSize(new Dimension(116, 20));
-		boutonGestionnaire.setLocation(new Point(650, 540));
+		boutonGestionnaire.setLocation(new Point(50, 540));
 		boutonGestionnaire.addActionListener(new ActionListener() {
 			
 			@Override
@@ -72,6 +80,7 @@ public class MainMenuPanel extends JPanel {
 		add(boutonSurvie);
 		add(boutonGestionnaire);
 		add(bAideNormal);
+		add(bAideSurvie);
 		add(backGround);
 		
 		
