@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -45,6 +46,7 @@ public class SurvieGamePanel extends JPanel{
 
 	public SurvieGamePanel(){
 		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitter.jpg"));
+		ImageIcon iconeSuivante = new ImageIcon(this.getClass().getResource("/JeuImages/questionSuivante.jpg"));
 
 		try
 		{
@@ -117,7 +119,7 @@ public class SurvieGamePanel extends JPanel{
 		reponse4.addActionListener(new RepondreQuestion());
 		reponse4.setLocation(new Point(400,470));
 
-		suivant = new JButton("Question suivante");
+		suivant = new JButton(iconeSuivante);
 		suivant.setSize(new Dimension(200, 25));
 		suivant.addActionListener(new ActionListener() {
 

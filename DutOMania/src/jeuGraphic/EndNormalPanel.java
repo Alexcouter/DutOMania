@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -27,7 +28,7 @@ public class EndNormalPanel extends JLabel {
 	private Image bg;
 
 	public EndNormalPanel() {
-		
+		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitter.jpg"));
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/Findepartie.jpg"));
@@ -54,7 +55,7 @@ public class EndNormalPanel extends JLabel {
 		commNote.setFont(f);
 		
 
-		retour = new JButton("Menu Principal");
+		retour = new JButton(iconeQuitter);
 		retour.setBounds(600, 500, 150, 25);
 		retour.addActionListener(new ActionListener() {
 

@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,7 +21,7 @@ public class EndSurviePanel extends JPanel{
 	private Image bg;
 
 	public EndSurviePanel(){
-		
+		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitter.jpg"));
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/FindepartieSurvie.jpg"));
@@ -42,7 +43,7 @@ public class EndSurviePanel extends JPanel{
 		scoreFinal.setForeground(Color.white);
 
 
-		retour = new JButton("Menu Principal");
+		retour = new JButton(iconeQuitter);
 		retour.setBounds(600, 500, 150, 25);
 		retour.addActionListener(new ActionListener() {
 
