@@ -15,14 +15,15 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ReglesNormal extends JPanel {
+
+public class ReglesSurvie extends JPanel {
 	private JLabel regle;
 	private Image bg;
 	private JButton retour;
 
-	public ReglesNormal() {
+	public ReglesSurvie() {
 		ImageIcon iconeRetour = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonRetour.jpg"));
-		
+
 		try
 		{
 			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/ReglesFond.jpg"));
@@ -32,45 +33,47 @@ public class ReglesNormal extends JPanel {
 		{
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
+
+
+
 		Font f = new Font(null, Font.PLAIN, 25);
 		regle = new JLabel();
 		regle.setFont(f);
 		regle.setBounds(0, 0, 800, 600);
-		regle.setText("<html><center>Dans ce mode, vous avez une série de 20 question auquel il vous faut répondre. Pour vous aider Vous avez le droit à deux jokers dans la partie : Le 42 qui vous donne la réponse à la question et un joker MoitMoit qui enlève deux mauvaises réponses.</center></html>");
-		
+		regle.setText("<html><center>Dans ce mode, vous devez répondre a un aximum de question. Il y a trois niveau de difficulté : En facile, vous débuté avec 5 vies, en normale 3 vies et en difficile seulement une vie. La partie se termine lorsque vous donné une maucaise éponse et que vous n'avez plus de vie.</center></html>");
+
 		retour = new JButton(iconeRetour);
 		retour.setLocation(new Point(350, 500));
 		retour.setSize(new Dimension(100, 40));
 		retour.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent arg0) {
-				DutOManiaWindow.cont.remove(DutOManiaWindow.ecranRegleNormal);
+				DutOManiaWindow.cont.remove(DutOManiaWindow.ecranRegleSurvie);
 				DutOManiaWindow.cont.add(DutOManiaWindow.menuPrincipal);
 				DutOManiaWindow.cont.validate();
 				DutOManiaWindow.cont.repaint();
-				
+
 			}
 		});
-		
-		
+
+
 		regle.setBackground(null);
-	
+
 		setLayout(null);
-		
+
 		add(retour);
 		add(regle);
-		
+
 
 	}
-	
+
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(this.bg, 0, 0, 794, 572, this);
 	}
 
-	
+
 }
+
+

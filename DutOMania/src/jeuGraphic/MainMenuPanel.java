@@ -85,6 +85,30 @@ public class MainMenuPanel extends JPanel {
 		
 		
 		//ActionListeners
+		bAideNormal.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent arg0) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
+				DutOManiaWindow.cont.add(DutOManiaWindow.ecranRegleNormal);
+				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
+				
+			}
+		});
+		
+		bAideSurvie.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				DutOManiaWindow.cont.remove(DutOManiaWindow.menuPrincipal);
+				DutOManiaWindow.cont.add(DutOManiaWindow.ecranRegleSurvie);
+				DutOManiaWindow.cont.validate();
+				DutOManiaWindow.cont.repaint();
+				
+			}
+		});
+
+		
 		boutonNormal.addActionListener(new ActionListener() {
 			
 			@Override

@@ -11,6 +11,8 @@ public class DutOManiaWindow extends JFrame {
 	public static SurvieGamePanel ecranJeuSurvie = new SurvieGamePanel();
 	public static EndNormalPanel ecrantFinJeuNormal = new EndNormalPanel();
 	public static EndSurviePanel ecrantFinJeuSurvie = new EndSurviePanel();
+	public static ReglesNormal ecranRegleNormal = new ReglesNormal();
+	public static ReglesSurvie ecranRegleSurvie = new ReglesSurvie();
 	public static Container cont;
 	
 	public DutOManiaWindow(){
