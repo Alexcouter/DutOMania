@@ -16,6 +16,7 @@ public class MainMenuPanel extends JPanel {
 	private JButton boutonSurvie = null;
 	private JButton boutonQuitter = null;
 	private JButton boutonGestionnaire;
+	private JButton bAideNormal;
 	
 	public MainMenuPanel() {
 		//Images
@@ -23,9 +24,15 @@ public class MainMenuPanel extends JPanel {
 		ImageIcon iconeSurvie = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonSurvie.jpg"));
 		ImageIcon iconeQuitter = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonQuitterMain.jpg"));
 		ImageIcon iconeGestionnaire = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonGestionnaire.jpg"));
+		ImageIcon iconAide = new ImageIcon(this.getClass().getResource("/JeuImages/BoutonAide.png"));
 
 		MainDut backGround = new MainDut("JeuImages/MainDut.jpg");
 		backGround.setBounds(0, 0, 800, 600);
+		
+		//création des boutons d'aides
+		bAideNormal = new JButton(iconAide);
+		bAideNormal.setSize(new Dimension(30, 30));
+		bAideNormal.setLocation(new Point(580, 315));
 		
 		//Création bouton normal
 		boutonNormal = new JButton(iconeNormal);
@@ -64,7 +71,9 @@ public class MainMenuPanel extends JPanel {
 		add(boutonQuitter);
 		add(boutonSurvie);
 		add(boutonGestionnaire);
+		add(bAideNormal);
 		add(backGround);
+		
 		
 		//ActionListeners
 		boutonNormal.addActionListener(new ActionListener() {
