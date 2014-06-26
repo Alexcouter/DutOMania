@@ -1,10 +1,15 @@
 package jeuGraphic;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class SurvivalChoicePanel extends JPanel {
@@ -14,8 +19,22 @@ public class SurvivalChoicePanel extends JPanel {
 	private JButton boutonDifficile;
 	private JButton boutonRetour;
 	public int difficulte;
+	private Image bg;
 	
 	public SurvivalChoicePanel(){
+		
+		try
+		{
+			this.bg = ImageIO.read(getClass().getClassLoader().getResource("JeuImages/SurvieChoix.jpg"));
+
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		
 		//texte au dessus des boutons
 		survieChoixTxt = new JLabel();
 		
@@ -101,5 +120,11 @@ public class SurvivalChoicePanel extends JPanel {
 			
 		}
 		
+	}
+	
+	
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(this.bg, 0, 0, 794, 572, this);
 	}
 }
