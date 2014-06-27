@@ -41,7 +41,7 @@ public class ReglesSurvie extends JPanel {
 		regle = new JLabel();
 		regle.setFont(f);
 		regle.setBounds(0, 0, 800, 600);
-		regle.setText("<html><center>Dans ce mode, vous devez répondre a un aximum de question. Il y a trois niveau de difficulté : En facile, vous débuté avec 5 vies, en normale 3 vies et en difficile seulement une vie. La partie se termine lorsque vous donné une maucaise éponse et que vous n'avez plus de vie.</center></html>");
+		regle.setText("<html><center>Dans ce mode, vous devez répondre à un maximum de questions. Il y a trois niveaux de difficulté : En facile, vous débutez avec 5 vies, en normal 3 vies et en difficile seulement une vie. La partie se termine lorsque vous donnez une mauvaise réponse et que vous n'avez plus de vie.</center></html>");
 
 		retour = new JButton(iconeRetour);
 		retour.setLocation(new Point(350, 500));
